@@ -1,0 +1,17 @@
+# Output products list for <IM>
+IM/blk_mem_gen_v7_3_readme.txt
+IM/doc/blk_mem_gen_v7_3_vinfo.html
+IM/doc/pg058-blk-mem-gen.pdf
+IM.asy
+IM.gise
+IM.mif
+IM.ngc
+IM.sym
+IM.v
+IM.veo
+IM.xco
+IM.xise
+IM_flist.txt
+IM_xmdf.tcl
+_xmsgs/pn_parser.xmsgs
+summary.log

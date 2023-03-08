@@ -1,0 +1,953 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 2 -n
+3 -fastpaths -xml fpga_top.twx fpga_top.ncd -o fpga_top.twr fpga_top.pcf
+
+Design file:              fpga_top.ncd
+Physical constraint file: fpga_top.pcf
+Device,package,speed:     xc6slx100,fgg676,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_clk_in = PERIOD TIMEGRP "clk_in" 40 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 1635310795323 paths analyzed, 11345 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  34.946ns.
+--------------------------------------------------------------------------------
+
+Paths for end point __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_44 (SLICE_X15Y160.A1), 26953678890 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     5.054ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               __mips/R_Addr_17 (FF)
+  Destination:          __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_44 (FF)
+  Requirement:          40.000ns
+  Data Path Delay:      34.889ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.022ns (0.336 - 0.358)
+  Source Clock:         clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    clk_in_BUFGP rising at 40.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: __mips/R_Addr_17 to __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_44
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y163.DQ     Tcko                  0.525   __mips/R_Addr<17>
+                                                       __mips/R_Addr_17
+    SLICE_X8Y170.B2      net (fanout=13)       1.556   __mips/R_Addr<17>
+    SLICE_X8Y170.COUT    Topcyb                0.483   __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_lut<1>
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+    SLICE_X8Y171.CIN     net (fanout=1)        0.003   __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+    SLICE_X8Y171.AMUX    Tcina                 0.230   __mips/Bridge_Mips/GND_28_o_R_Addr[31]_LessThan_20_o
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<4>
+    SLICE_X40Y161.D4     net (fanout=33)       3.421   __mips/Bridge_Mips/GND_28_o_R_Addr[31]_LessThan_20_o
+    SLICE_X40Y161.D      Tilo                  0.254   __mips/Timer0_Mips/mem_15
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata141
+    SLICE_X23Y164.D2     net (fanout=2)        2.730   __mips/Bridge_Mips/Mmux_m_data_rdata14
+    SLICE_X23Y164.D      Tilo                  0.259   N220
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata142_SW1
+    SLICE_X23Y164.A3     net (fanout=1)        0.359   N220
+    SLICE_X23Y164.A      Tilo                  0.259   N220
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata143
+    SLICE_X19Y147.A1     net (fanout=6)        2.231   __mips/Bridge_O_m_data_rdata<15>
+    SLICE_X19Y147.A      Tilo                  0.259   __mips/CPU_Mips/RD1ForwardResultE<13>
+                                                       __mips/CPU_Mips/ALUResultW<1>1_2
+    SLICE_X22Y138.D6     net (fanout=9)        1.921   __mips/CPU_Mips/ALUResultW<1>1_1
+    SLICE_X22Y138.D      Tilo                  0.235   __mips/CPU_Mips/RD1ForwardResultE<9>
+                                                       __mips/CPU_Mips/Mmux_RD1ForwardResultE322
+    DSP48_X0Y36.A9       net (fanout=13)       2.584   __mips/CPU_Mips/RD1ForwardResultE<9>
+    DSP48_X0Y36.P40      Tdspdo_A_P            3.926   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr
+    DSP48_X0Y37.C23      net (fanout=1)        1.293   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr_P40_to_MulUnit/Mmult_sr1
+    DSP48_X0Y37.PCOUT0   Tdspdo_C_PCOUT        3.149   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1
+    DSP48_X0Y38.PCIN0    net (fanout=1)        0.059   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1_PCOUT_to_MulUnit/Mmult_sr2_PCIN_0
+    DSP48_X0Y38.P27      Tdspdo_PCIN_P         2.645   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2
+    DSP48_X0Y39.C10      net (fanout=1)        1.293   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2_P27_to_MulUnit/Mmult_sr3
+    DSP48_X0Y39.P10      Tdspdo_C_P            3.141   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr3
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr3
+    SLICE_X15Y160.A1     net (fanout=1)        1.701   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/sr<44>
+    SLICE_X15Y160.CLK    Tas                   0.373   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp<47>
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmux_usr[63]_sr[63]_mux_4_OUT391
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_44
+    -------------------------------------------------  ---------------------------
+    Total                                     34.889ns (15.738ns logic, 19.151ns route)
+                                                       (45.1% logic, 54.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     5.054ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               __mips/R_Addr_17 (FF)
+  Destination:          __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_44 (FF)
+  Requirement:          40.000ns
+  Data Path Delay:      34.889ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.022ns (0.336 - 0.358)
+  Source Clock:         clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    clk_in_BUFGP rising at 40.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: __mips/R_Addr_17 to __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_44
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y163.DQ     Tcko                  0.525   __mips/R_Addr<17>
+                                                       __mips/R_Addr_17
+    SLICE_X8Y170.B2      net (fanout=13)       1.556   __mips/R_Addr<17>
+    SLICE_X8Y170.COUT    Topcyb                0.483   __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_lut<1>
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+    SLICE_X8Y171.CIN     net (fanout=1)        0.003   __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+    SLICE_X8Y171.AMUX    Tcina                 0.230   __mips/Bridge_Mips/GND_28_o_R_Addr[31]_LessThan_20_o
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<4>
+    SLICE_X40Y161.D4     net (fanout=33)       3.421   __mips/Bridge_Mips/GND_28_o_R_Addr[31]_LessThan_20_o
+    SLICE_X40Y161.D      Tilo                  0.254   __mips/Timer0_Mips/mem_15
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata141
+    SLICE_X23Y164.D2     net (fanout=2)        2.730   __mips/Bridge_Mips/Mmux_m_data_rdata14
+    SLICE_X23Y164.D      Tilo                  0.259   N220
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata142_SW1
+    SLICE_X23Y164.A3     net (fanout=1)        0.359   N220
+    SLICE_X23Y164.A      Tilo                  0.259   N220
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata143
+    SLICE_X19Y147.A1     net (fanout=6)        2.231   __mips/Bridge_O_m_data_rdata<15>
+    SLICE_X19Y147.A      Tilo                  0.259   __mips/CPU_Mips/RD1ForwardResultE<13>
+                                                       __mips/CPU_Mips/ALUResultW<1>1_2
+    SLICE_X22Y138.D6     net (fanout=9)        1.921   __mips/CPU_Mips/ALUResultW<1>1_1
+    SLICE_X22Y138.D      Tilo                  0.235   __mips/CPU_Mips/RD1ForwardResultE<9>
+                                                       __mips/CPU_Mips/Mmux_RD1ForwardResultE322
+    DSP48_X0Y36.A9       net (fanout=13)       2.584   __mips/CPU_Mips/RD1ForwardResultE<9>
+    DSP48_X0Y36.P40      Tdspdo_A_P            3.926   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr
+    DSP48_X0Y37.C23      net (fanout=1)        1.293   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr_P40_to_MulUnit/Mmult_sr1
+    DSP48_X0Y37.PCOUT9   Tdspdo_C_PCOUT        3.149   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1
+    DSP48_X0Y38.PCIN9    net (fanout=1)        0.059   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1_PCOUT_to_MulUnit/Mmult_sr2_PCIN_9
+    DSP48_X0Y38.P27      Tdspdo_PCIN_P         2.645   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2
+    DSP48_X0Y39.C10      net (fanout=1)        1.293   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2_P27_to_MulUnit/Mmult_sr3
+    DSP48_X0Y39.P10      Tdspdo_C_P            3.141   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr3
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr3
+    SLICE_X15Y160.A1     net (fanout=1)        1.701   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/sr<44>
+    SLICE_X15Y160.CLK    Tas                   0.373   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp<47>
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmux_usr[63]_sr[63]_mux_4_OUT391
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_44
+    -------------------------------------------------  ---------------------------
+    Total                                     34.889ns (15.738ns logic, 19.151ns route)
+                                                       (45.1% logic, 54.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     5.054ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               __mips/R_Addr_17 (FF)
+  Destination:          __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_44 (FF)
+  Requirement:          40.000ns
+  Data Path Delay:      34.889ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.022ns (0.336 - 0.358)
+  Source Clock:         clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    clk_in_BUFGP rising at 40.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: __mips/R_Addr_17 to __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_44
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y163.DQ     Tcko                  0.525   __mips/R_Addr<17>
+                                                       __mips/R_Addr_17
+    SLICE_X8Y170.B2      net (fanout=13)       1.556   __mips/R_Addr<17>
+    SLICE_X8Y170.COUT    Topcyb                0.483   __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_lut<1>
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+    SLICE_X8Y171.CIN     net (fanout=1)        0.003   __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+    SLICE_X8Y171.AMUX    Tcina                 0.230   __mips/Bridge_Mips/GND_28_o_R_Addr[31]_LessThan_20_o
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<4>
+    SLICE_X40Y161.D4     net (fanout=33)       3.421   __mips/Bridge_Mips/GND_28_o_R_Addr[31]_LessThan_20_o
+    SLICE_X40Y161.D      Tilo                  0.254   __mips/Timer0_Mips/mem_15
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata141
+    SLICE_X23Y164.D2     net (fanout=2)        2.730   __mips/Bridge_Mips/Mmux_m_data_rdata14
+    SLICE_X23Y164.D      Tilo                  0.259   N220
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata142_SW1
+    SLICE_X23Y164.A3     net (fanout=1)        0.359   N220
+    SLICE_X23Y164.A      Tilo                  0.259   N220
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata143
+    SLICE_X19Y147.A1     net (fanout=6)        2.231   __mips/Bridge_O_m_data_rdata<15>
+    SLICE_X19Y147.A      Tilo                  0.259   __mips/CPU_Mips/RD1ForwardResultE<13>
+                                                       __mips/CPU_Mips/ALUResultW<1>1_2
+    SLICE_X22Y138.D6     net (fanout=9)        1.921   __mips/CPU_Mips/ALUResultW<1>1_1
+    SLICE_X22Y138.D      Tilo                  0.235   __mips/CPU_Mips/RD1ForwardResultE<9>
+                                                       __mips/CPU_Mips/Mmux_RD1ForwardResultE322
+    DSP48_X0Y36.A9       net (fanout=13)       2.584   __mips/CPU_Mips/RD1ForwardResultE<9>
+    DSP48_X0Y36.P40      Tdspdo_A_P            3.926   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr
+    DSP48_X0Y37.C23      net (fanout=1)        1.293   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr_P40_to_MulUnit/Mmult_sr1
+    DSP48_X0Y37.PCOUT1   Tdspdo_C_PCOUT        3.149   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1
+    DSP48_X0Y38.PCIN1    net (fanout=1)        0.059   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1_PCOUT_to_MulUnit/Mmult_sr2_PCIN_1
+    DSP48_X0Y38.P27      Tdspdo_PCIN_P         2.645   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2
+    DSP48_X0Y39.C10      net (fanout=1)        1.293   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2_P27_to_MulUnit/Mmult_sr3
+    DSP48_X0Y39.P10      Tdspdo_C_P            3.141   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr3
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr3
+    SLICE_X15Y160.A1     net (fanout=1)        1.701   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/sr<44>
+    SLICE_X15Y160.CLK    Tas                   0.373   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp<47>
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmux_usr[63]_sr[63]_mux_4_OUT391
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_44
+    -------------------------------------------------  ---------------------------
+    Total                                     34.889ns (15.738ns logic, 19.151ns route)
+                                                       (45.1% logic, 54.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_34 (SLICE_X15Y156.C2), 26953678890 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     5.114ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               __mips/R_Addr_26 (FF)
+  Destination:          __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_34 (FF)
+  Requirement:          40.000ns
+  Data Path Delay:      34.820ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.031ns (0.885 - 0.916)
+  Source Clock:         clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    clk_in_BUFGP rising at 40.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: __mips/R_Addr_26 to __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_34
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y165.AQ     Tcko                  0.430   __mips/R_Addr<29>
+                                                       __mips/R_Addr_26
+    SLICE_X8Y170.D3      net (fanout=13)       1.804   __mips/R_Addr<26>
+    SLICE_X8Y170.COUT    Topcyd                0.343   __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_lutdi2
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+    SLICE_X8Y171.CIN     net (fanout=1)        0.003   __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+    SLICE_X8Y171.AMUX    Tcina                 0.230   __mips/Bridge_Mips/GND_28_o_R_Addr[31]_LessThan_20_o
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<4>
+    SLICE_X40Y161.D4     net (fanout=33)       3.421   __mips/Bridge_Mips/GND_28_o_R_Addr[31]_LessThan_20_o
+    SLICE_X40Y161.D      Tilo                  0.254   __mips/Timer0_Mips/mem_15
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata141
+    SLICE_X23Y164.D2     net (fanout=2)        2.730   __mips/Bridge_Mips/Mmux_m_data_rdata14
+    SLICE_X23Y164.D      Tilo                  0.259   N220
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata142_SW1
+    SLICE_X23Y164.A3     net (fanout=1)        0.359   N220
+    SLICE_X23Y164.A      Tilo                  0.259   N220
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata143
+    SLICE_X19Y147.A1     net (fanout=6)        2.231   __mips/Bridge_O_m_data_rdata<15>
+    SLICE_X19Y147.A      Tilo                  0.259   __mips/CPU_Mips/RD1ForwardResultE<13>
+                                                       __mips/CPU_Mips/ALUResultW<1>1_2
+    SLICE_X22Y138.D6     net (fanout=9)        1.921   __mips/CPU_Mips/ALUResultW<1>1_1
+    SLICE_X22Y138.D      Tilo                  0.235   __mips/CPU_Mips/RD1ForwardResultE<9>
+                                                       __mips/CPU_Mips/Mmux_RD1ForwardResultE322
+    DSP48_X0Y36.A9       net (fanout=13)       2.584   __mips/CPU_Mips/RD1ForwardResultE<9>
+    DSP48_X0Y36.P40      Tdspdo_A_P            3.926   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr
+    DSP48_X0Y37.C23      net (fanout=1)        1.293   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr_P40_to_MulUnit/Mmult_sr1
+    DSP48_X0Y37.PCOUT9   Tdspdo_C_PCOUT        3.149   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1
+    DSP48_X0Y38.PCIN9    net (fanout=1)        0.059   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1_PCOUT_to_MulUnit/Mmult_sr2_PCIN_9
+    DSP48_X0Y38.P27      Tdspdo_PCIN_P         2.645   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2
+    DSP48_X0Y39.C10      net (fanout=1)        1.293   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2_P27_to_MulUnit/Mmult_sr3
+    DSP48_X0Y39.P0       Tdspdo_C_P            3.141   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr3
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr3
+    SLICE_X15Y156.C2     net (fanout=1)        1.619   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/sr<34>
+    SLICE_X15Y156.CLK    Tas                   0.373   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp<35>
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmux_usr[63]_sr[63]_mux_4_OUT281
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_34
+    -------------------------------------------------  ---------------------------
+    Total                                     34.820ns (15.503ns logic, 19.317ns route)
+                                                       (44.5% logic, 55.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     5.114ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               __mips/R_Addr_17 (FF)
+  Destination:          __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_34 (FF)
+  Requirement:          40.000ns
+  Data Path Delay:      34.807ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.044ns (0.885 - 0.929)
+  Source Clock:         clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    clk_in_BUFGP rising at 40.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: __mips/R_Addr_17 to __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_34
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y163.DQ     Tcko                  0.525   __mips/R_Addr<17>
+                                                       __mips/R_Addr_17
+    SLICE_X8Y170.B2      net (fanout=13)       1.556   __mips/R_Addr<17>
+    SLICE_X8Y170.COUT    Topcyb                0.483   __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_lut<1>
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+    SLICE_X8Y171.CIN     net (fanout=1)        0.003   __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+    SLICE_X8Y171.AMUX    Tcina                 0.230   __mips/Bridge_Mips/GND_28_o_R_Addr[31]_LessThan_20_o
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<4>
+    SLICE_X40Y161.D4     net (fanout=33)       3.421   __mips/Bridge_Mips/GND_28_o_R_Addr[31]_LessThan_20_o
+    SLICE_X40Y161.D      Tilo                  0.254   __mips/Timer0_Mips/mem_15
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata141
+    SLICE_X23Y164.D2     net (fanout=2)        2.730   __mips/Bridge_Mips/Mmux_m_data_rdata14
+    SLICE_X23Y164.D      Tilo                  0.259   N220
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata142_SW1
+    SLICE_X23Y164.A3     net (fanout=1)        0.359   N220
+    SLICE_X23Y164.A      Tilo                  0.259   N220
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata143
+    SLICE_X19Y147.A1     net (fanout=6)        2.231   __mips/Bridge_O_m_data_rdata<15>
+    SLICE_X19Y147.A      Tilo                  0.259   __mips/CPU_Mips/RD1ForwardResultE<13>
+                                                       __mips/CPU_Mips/ALUResultW<1>1_2
+    SLICE_X22Y138.D6     net (fanout=9)        1.921   __mips/CPU_Mips/ALUResultW<1>1_1
+    SLICE_X22Y138.D      Tilo                  0.235   __mips/CPU_Mips/RD1ForwardResultE<9>
+                                                       __mips/CPU_Mips/Mmux_RD1ForwardResultE322
+    DSP48_X0Y36.A9       net (fanout=13)       2.584   __mips/CPU_Mips/RD1ForwardResultE<9>
+    DSP48_X0Y36.P40      Tdspdo_A_P            3.926   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr
+    DSP48_X0Y37.C23      net (fanout=1)        1.293   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr_P40_to_MulUnit/Mmult_sr1
+    DSP48_X0Y37.PCOUT9   Tdspdo_C_PCOUT        3.149   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1
+    DSP48_X0Y38.PCIN9    net (fanout=1)        0.059   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1_PCOUT_to_MulUnit/Mmult_sr2_PCIN_9
+    DSP48_X0Y38.P27      Tdspdo_PCIN_P         2.645   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2
+    DSP48_X0Y39.C10      net (fanout=1)        1.293   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2_P27_to_MulUnit/Mmult_sr3
+    DSP48_X0Y39.P0       Tdspdo_C_P            3.141   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr3
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr3
+    SLICE_X15Y156.C2     net (fanout=1)        1.619   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/sr<34>
+    SLICE_X15Y156.CLK    Tas                   0.373   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp<35>
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmux_usr[63]_sr[63]_mux_4_OUT281
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_34
+    -------------------------------------------------  ---------------------------
+    Total                                     34.807ns (15.738ns logic, 19.069ns route)
+                                                       (45.2% logic, 54.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     5.114ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               __mips/R_Addr_17 (FF)
+  Destination:          __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_34 (FF)
+  Requirement:          40.000ns
+  Data Path Delay:      34.807ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.044ns (0.885 - 0.929)
+  Source Clock:         clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    clk_in_BUFGP rising at 40.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: __mips/R_Addr_17 to __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_34
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y163.DQ     Tcko                  0.525   __mips/R_Addr<17>
+                                                       __mips/R_Addr_17
+    SLICE_X8Y170.B2      net (fanout=13)       1.556   __mips/R_Addr<17>
+    SLICE_X8Y170.COUT    Topcyb                0.483   __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_lut<1>
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+    SLICE_X8Y171.CIN     net (fanout=1)        0.003   __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+    SLICE_X8Y171.AMUX    Tcina                 0.230   __mips/Bridge_Mips/GND_28_o_R_Addr[31]_LessThan_20_o
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<4>
+    SLICE_X40Y161.D4     net (fanout=33)       3.421   __mips/Bridge_Mips/GND_28_o_R_Addr[31]_LessThan_20_o
+    SLICE_X40Y161.D      Tilo                  0.254   __mips/Timer0_Mips/mem_15
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata141
+    SLICE_X23Y164.D2     net (fanout=2)        2.730   __mips/Bridge_Mips/Mmux_m_data_rdata14
+    SLICE_X23Y164.D      Tilo                  0.259   N220
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata142_SW1
+    SLICE_X23Y164.A3     net (fanout=1)        0.359   N220
+    SLICE_X23Y164.A      Tilo                  0.259   N220
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata143
+    SLICE_X19Y147.A1     net (fanout=6)        2.231   __mips/Bridge_O_m_data_rdata<15>
+    SLICE_X19Y147.A      Tilo                  0.259   __mips/CPU_Mips/RD1ForwardResultE<13>
+                                                       __mips/CPU_Mips/ALUResultW<1>1_2
+    SLICE_X22Y138.D6     net (fanout=9)        1.921   __mips/CPU_Mips/ALUResultW<1>1_1
+    SLICE_X22Y138.D      Tilo                  0.235   __mips/CPU_Mips/RD1ForwardResultE<9>
+                                                       __mips/CPU_Mips/Mmux_RD1ForwardResultE322
+    DSP48_X0Y36.A9       net (fanout=13)       2.584   __mips/CPU_Mips/RD1ForwardResultE<9>
+    DSP48_X0Y36.P40      Tdspdo_A_P            3.926   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr
+    DSP48_X0Y37.C23      net (fanout=1)        1.293   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr_P40_to_MulUnit/Mmult_sr1
+    DSP48_X0Y37.PCOUT0   Tdspdo_C_PCOUT        3.149   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1
+    DSP48_X0Y38.PCIN0    net (fanout=1)        0.059   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1_PCOUT_to_MulUnit/Mmult_sr2_PCIN_0
+    DSP48_X0Y38.P27      Tdspdo_PCIN_P         2.645   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2
+    DSP48_X0Y39.C10      net (fanout=1)        1.293   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2_P27_to_MulUnit/Mmult_sr3
+    DSP48_X0Y39.P0       Tdspdo_C_P            3.141   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr3
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr3
+    SLICE_X15Y156.C2     net (fanout=1)        1.619   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/sr<34>
+    SLICE_X15Y156.CLK    Tas                   0.373   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp<35>
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmux_usr[63]_sr[63]_mux_4_OUT281
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_34
+    -------------------------------------------------  ---------------------------
+    Total                                     34.807ns (15.738ns logic, 19.069ns route)
+                                                       (45.2% logic, 54.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_56 (SLICE_X19Y161.A4), 26953678890 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     5.170ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               __mips/R_Addr_26 (FF)
+  Destination:          __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_56 (FF)
+  Requirement:          40.000ns
+  Data Path Delay:      34.765ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.030ns (0.315 - 0.345)
+  Source Clock:         clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    clk_in_BUFGP rising at 40.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: __mips/R_Addr_26 to __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_56
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y165.AQ     Tcko                  0.430   __mips/R_Addr<29>
+                                                       __mips/R_Addr_26
+    SLICE_X8Y170.D3      net (fanout=13)       1.804   __mips/R_Addr<26>
+    SLICE_X8Y170.COUT    Topcyd                0.343   __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_lutdi2
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+    SLICE_X8Y171.CIN     net (fanout=1)        0.003   __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+    SLICE_X8Y171.AMUX    Tcina                 0.230   __mips/Bridge_Mips/GND_28_o_R_Addr[31]_LessThan_20_o
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<4>
+    SLICE_X40Y161.D4     net (fanout=33)       3.421   __mips/Bridge_Mips/GND_28_o_R_Addr[31]_LessThan_20_o
+    SLICE_X40Y161.D      Tilo                  0.254   __mips/Timer0_Mips/mem_15
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata141
+    SLICE_X23Y164.D2     net (fanout=2)        2.730   __mips/Bridge_Mips/Mmux_m_data_rdata14
+    SLICE_X23Y164.D      Tilo                  0.259   N220
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata142_SW1
+    SLICE_X23Y164.A3     net (fanout=1)        0.359   N220
+    SLICE_X23Y164.A      Tilo                  0.259   N220
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata143
+    SLICE_X19Y147.A1     net (fanout=6)        2.231   __mips/Bridge_O_m_data_rdata<15>
+    SLICE_X19Y147.A      Tilo                  0.259   __mips/CPU_Mips/RD1ForwardResultE<13>
+                                                       __mips/CPU_Mips/ALUResultW<1>1_2
+    SLICE_X22Y138.D6     net (fanout=9)        1.921   __mips/CPU_Mips/ALUResultW<1>1_1
+    SLICE_X22Y138.D      Tilo                  0.235   __mips/CPU_Mips/RD1ForwardResultE<9>
+                                                       __mips/CPU_Mips/Mmux_RD1ForwardResultE322
+    DSP48_X0Y36.A9       net (fanout=13)       2.584   __mips/CPU_Mips/RD1ForwardResultE<9>
+    DSP48_X0Y36.P40      Tdspdo_A_P            3.926   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr
+    DSP48_X0Y37.C23      net (fanout=1)        1.293   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr_P40_to_MulUnit/Mmult_sr1
+    DSP48_X0Y37.PCOUT9   Tdspdo_C_PCOUT        3.149   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1
+    DSP48_X0Y38.PCIN9    net (fanout=1)        0.059   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1_PCOUT_to_MulUnit/Mmult_sr2_PCIN_9
+    DSP48_X0Y38.P27      Tdspdo_PCIN_P         2.645   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2
+    DSP48_X0Y39.C10      net (fanout=1)        1.293   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2_P27_to_MulUnit/Mmult_sr3
+    DSP48_X0Y39.P22      Tdspdo_C_P            3.141   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr3
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr3
+    SLICE_X19Y161.A4     net (fanout=1)        1.564   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/sr<56>
+    SLICE_X19Y161.CLK    Tas                   0.373   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp<59>
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmux_usr[63]_sr[63]_mux_4_OUT521
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_56
+    -------------------------------------------------  ---------------------------
+    Total                                     34.765ns (15.503ns logic, 19.262ns route)
+                                                       (44.6% logic, 55.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     5.170ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               __mips/R_Addr_17 (FF)
+  Destination:          __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_56 (FF)
+  Requirement:          40.000ns
+  Data Path Delay:      34.752ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.043ns (0.315 - 0.358)
+  Source Clock:         clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    clk_in_BUFGP rising at 40.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: __mips/R_Addr_17 to __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_56
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y163.DQ     Tcko                  0.525   __mips/R_Addr<17>
+                                                       __mips/R_Addr_17
+    SLICE_X8Y170.B2      net (fanout=13)       1.556   __mips/R_Addr<17>
+    SLICE_X8Y170.COUT    Topcyb                0.483   __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_lut<1>
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+    SLICE_X8Y171.CIN     net (fanout=1)        0.003   __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+    SLICE_X8Y171.AMUX    Tcina                 0.230   __mips/Bridge_Mips/GND_28_o_R_Addr[31]_LessThan_20_o
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<4>
+    SLICE_X40Y161.D4     net (fanout=33)       3.421   __mips/Bridge_Mips/GND_28_o_R_Addr[31]_LessThan_20_o
+    SLICE_X40Y161.D      Tilo                  0.254   __mips/Timer0_Mips/mem_15
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata141
+    SLICE_X23Y164.D2     net (fanout=2)        2.730   __mips/Bridge_Mips/Mmux_m_data_rdata14
+    SLICE_X23Y164.D      Tilo                  0.259   N220
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata142_SW1
+    SLICE_X23Y164.A3     net (fanout=1)        0.359   N220
+    SLICE_X23Y164.A      Tilo                  0.259   N220
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata143
+    SLICE_X19Y147.A1     net (fanout=6)        2.231   __mips/Bridge_O_m_data_rdata<15>
+    SLICE_X19Y147.A      Tilo                  0.259   __mips/CPU_Mips/RD1ForwardResultE<13>
+                                                       __mips/CPU_Mips/ALUResultW<1>1_2
+    SLICE_X22Y138.D6     net (fanout=9)        1.921   __mips/CPU_Mips/ALUResultW<1>1_1
+    SLICE_X22Y138.D      Tilo                  0.235   __mips/CPU_Mips/RD1ForwardResultE<9>
+                                                       __mips/CPU_Mips/Mmux_RD1ForwardResultE322
+    DSP48_X0Y36.A9       net (fanout=13)       2.584   __mips/CPU_Mips/RD1ForwardResultE<9>
+    DSP48_X0Y36.P40      Tdspdo_A_P            3.926   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr
+    DSP48_X0Y37.C23      net (fanout=1)        1.293   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr_P40_to_MulUnit/Mmult_sr1
+    DSP48_X0Y37.PCOUT9   Tdspdo_C_PCOUT        3.149   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1
+    DSP48_X0Y38.PCIN9    net (fanout=1)        0.059   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1_PCOUT_to_MulUnit/Mmult_sr2_PCIN_9
+    DSP48_X0Y38.P27      Tdspdo_PCIN_P         2.645   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2
+    DSP48_X0Y39.C10      net (fanout=1)        1.293   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2_P27_to_MulUnit/Mmult_sr3
+    DSP48_X0Y39.P22      Tdspdo_C_P            3.141   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr3
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr3
+    SLICE_X19Y161.A4     net (fanout=1)        1.564   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/sr<56>
+    SLICE_X19Y161.CLK    Tas                   0.373   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp<59>
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmux_usr[63]_sr[63]_mux_4_OUT521
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_56
+    -------------------------------------------------  ---------------------------
+    Total                                     34.752ns (15.738ns logic, 19.014ns route)
+                                                       (45.3% logic, 54.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     5.170ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               __mips/R_Addr_17 (FF)
+  Destination:          __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_56 (FF)
+  Requirement:          40.000ns
+  Data Path Delay:      34.752ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.043ns (0.315 - 0.358)
+  Source Clock:         clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    clk_in_BUFGP rising at 40.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: __mips/R_Addr_17 to __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_56
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y163.DQ     Tcko                  0.525   __mips/R_Addr<17>
+                                                       __mips/R_Addr_17
+    SLICE_X8Y170.B2      net (fanout=13)       1.556   __mips/R_Addr<17>
+    SLICE_X8Y170.COUT    Topcyb                0.483   __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_lut<1>
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+    SLICE_X8Y171.CIN     net (fanout=1)        0.003   __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>
+    SLICE_X8Y171.AMUX    Tcina                 0.230   __mips/Bridge_Mips/GND_28_o_R_Addr[31]_LessThan_20_o
+                                                       __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<4>
+    SLICE_X40Y161.D4     net (fanout=33)       3.421   __mips/Bridge_Mips/GND_28_o_R_Addr[31]_LessThan_20_o
+    SLICE_X40Y161.D      Tilo                  0.254   __mips/Timer0_Mips/mem_15
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata141
+    SLICE_X23Y164.D2     net (fanout=2)        2.730   __mips/Bridge_Mips/Mmux_m_data_rdata14
+    SLICE_X23Y164.D      Tilo                  0.259   N220
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata142_SW1
+    SLICE_X23Y164.A3     net (fanout=1)        0.359   N220
+    SLICE_X23Y164.A      Tilo                  0.259   N220
+                                                       __mips/Bridge_Mips/Mmux_m_data_rdata143
+    SLICE_X19Y147.A1     net (fanout=6)        2.231   __mips/Bridge_O_m_data_rdata<15>
+    SLICE_X19Y147.A      Tilo                  0.259   __mips/CPU_Mips/RD1ForwardResultE<13>
+                                                       __mips/CPU_Mips/ALUResultW<1>1_2
+    SLICE_X22Y138.D6     net (fanout=9)        1.921   __mips/CPU_Mips/ALUResultW<1>1_1
+    SLICE_X22Y138.D      Tilo                  0.235   __mips/CPU_Mips/RD1ForwardResultE<9>
+                                                       __mips/CPU_Mips/Mmux_RD1ForwardResultE322
+    DSP48_X0Y36.A9       net (fanout=13)       2.584   __mips/CPU_Mips/RD1ForwardResultE<9>
+    DSP48_X0Y36.P40      Tdspdo_A_P            3.926   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr
+    DSP48_X0Y37.C23      net (fanout=1)        1.293   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr_P40_to_MulUnit/Mmult_sr1
+    DSP48_X0Y37.PCOUT0   Tdspdo_C_PCOUT        3.149   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1
+    DSP48_X0Y38.PCIN0    net (fanout=1)        0.059   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1_PCOUT_to_MulUnit/Mmult_sr2_PCIN_0
+    DSP48_X0Y38.P27      Tdspdo_PCIN_P         2.645   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2
+    DSP48_X0Y39.C10      net (fanout=1)        1.293   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2_P27_to_MulUnit/Mmult_sr3
+    DSP48_X0Y39.P22      Tdspdo_C_P            3.141   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr3
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr3
+    SLICE_X19Y161.A4     net (fanout=1)        1.564   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/sr<56>
+    SLICE_X19Y161.CLK    Tas                   0.373   __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp<59>
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmux_usr[63]_sr[63]_mux_4_OUT521
+                                                       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_56
+    -------------------------------------------------  ---------------------------
+    Total                                     34.752ns (15.738ns logic, 19.014ns route)
+                                                       (45.3% logic, 54.7% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_clk_in = PERIOD TIMEGRP "clk_in" 40 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point __mips/__UART/__uart_rx/bit_count_2 (SLICE_X52Y138.CE), 277 paths
+--------------------------------------------------------------------------------
+Slack (hold path):      0.365ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               __mips/__UART/__uart_rx/bit_count_1 (FF)
+  Destination:          __mips/__UART/__uart_rx/bit_count_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.365ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_in_BUFGP rising at 40.000ns
+  Destination Clock:    clk_in_BUFGP rising at 40.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: __mips/__UART/__uart_rx/bit_count_1 to __mips/__UART/__uart_rx/bit_count_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y138.BMUX   Tshcko                0.266   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/bit_count_1
+    SLICE_X52Y138.C6     net (fanout=3)        0.034   __mips/__UART/__uart_rx/bit_count<1>
+    SLICE_X52Y138.C      Tilo                  0.156   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/_n0110_inv21
+    SLICE_X52Y138.CE     net (fanout=1)        0.011   __mips/__UART/__uart_rx/_n0110_inv
+    SLICE_X52Y138.CLK    Tckce       (-Th)     0.102   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/bit_count_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.365ns (0.320ns logic, 0.045ns route)
+                                                       (87.7% logic, 12.3% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      0.448ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               __mips/__UART/__uart_rx/state_FSM_FFd2 (FF)
+  Destination:          __mips/__UART/__uart_rx/bit_count_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.448ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_in_BUFGP rising at 40.000ns
+  Destination Clock:    clk_in_BUFGP rising at 40.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: __mips/__UART/__uart_rx/state_FSM_FFd2 to __mips/__UART/__uart_rx/bit_count_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X53Y139.BQ     Tcko                  0.198   __mips/__UART/__uart_rx/state_FSM_FFd2
+                                                       __mips/__UART/__uart_rx/state_FSM_FFd2
+    SLICE_X52Y138.C5     net (fanout=20)       0.185   __mips/__UART/__uart_rx/state_FSM_FFd2
+    SLICE_X52Y138.C      Tilo                  0.156   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/_n0110_inv21
+    SLICE_X52Y138.CE     net (fanout=1)        0.011   __mips/__UART/__uart_rx/_n0110_inv
+    SLICE_X52Y138.CLK    Tckce       (-Th)     0.102   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/bit_count_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.448ns (0.252ns logic, 0.196ns route)
+                                                       (56.2% logic, 43.8% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      0.481ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               __mips/__UART/__uart_rx/bit_count_0 (FF)
+  Destination:          __mips/__UART/__uart_rx/bit_count_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.481ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_in_BUFGP rising at 40.000ns
+  Destination Clock:    clk_in_BUFGP rising at 40.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: __mips/__UART/__uart_rx/bit_count_0 to __mips/__UART/__uart_rx/bit_count_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y138.AQ     Tcko                  0.234   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/bit_count_0
+    SLICE_X52Y138.C3     net (fanout=3)        0.182   __mips/__UART/__uart_rx/bit_count<0>
+    SLICE_X52Y138.C      Tilo                  0.156   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/_n0110_inv21
+    SLICE_X52Y138.CE     net (fanout=1)        0.011   __mips/__UART/__uart_rx/_n0110_inv
+    SLICE_X52Y138.CLK    Tckce       (-Th)     0.102   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/bit_count_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.481ns (0.288ns logic, 0.193ns route)
+                                                       (59.9% logic, 40.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point __mips/__UART/__uart_rx/bit_count_0 (SLICE_X52Y138.CE), 277 paths
+--------------------------------------------------------------------------------
+Slack (hold path):      0.375ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               __mips/__UART/__uart_rx/bit_count_1 (FF)
+  Destination:          __mips/__UART/__uart_rx/bit_count_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.375ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_in_BUFGP rising at 40.000ns
+  Destination Clock:    clk_in_BUFGP rising at 40.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: __mips/__UART/__uart_rx/bit_count_1 to __mips/__UART/__uart_rx/bit_count_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y138.BMUX   Tshcko                0.266   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/bit_count_1
+    SLICE_X52Y138.C6     net (fanout=3)        0.034   __mips/__UART/__uart_rx/bit_count<1>
+    SLICE_X52Y138.C      Tilo                  0.156   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/_n0110_inv21
+    SLICE_X52Y138.CE     net (fanout=1)        0.011   __mips/__UART/__uart_rx/_n0110_inv
+    SLICE_X52Y138.CLK    Tckce       (-Th)     0.092   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/bit_count_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.330ns logic, 0.045ns route)
+                                                       (88.0% logic, 12.0% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      0.458ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               __mips/__UART/__uart_rx/state_FSM_FFd2 (FF)
+  Destination:          __mips/__UART/__uart_rx/bit_count_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.458ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_in_BUFGP rising at 40.000ns
+  Destination Clock:    clk_in_BUFGP rising at 40.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: __mips/__UART/__uart_rx/state_FSM_FFd2 to __mips/__UART/__uart_rx/bit_count_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X53Y139.BQ     Tcko                  0.198   __mips/__UART/__uart_rx/state_FSM_FFd2
+                                                       __mips/__UART/__uart_rx/state_FSM_FFd2
+    SLICE_X52Y138.C5     net (fanout=20)       0.185   __mips/__UART/__uart_rx/state_FSM_FFd2
+    SLICE_X52Y138.C      Tilo                  0.156   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/_n0110_inv21
+    SLICE_X52Y138.CE     net (fanout=1)        0.011   __mips/__UART/__uart_rx/_n0110_inv
+    SLICE_X52Y138.CLK    Tckce       (-Th)     0.092   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/bit_count_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.458ns (0.262ns logic, 0.196ns route)
+                                                       (57.2% logic, 42.8% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      0.491ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               __mips/__UART/__uart_rx/bit_count_0 (FF)
+  Destination:          __mips/__UART/__uart_rx/bit_count_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.491ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_in_BUFGP rising at 40.000ns
+  Destination Clock:    clk_in_BUFGP rising at 40.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: __mips/__UART/__uart_rx/bit_count_0 to __mips/__UART/__uart_rx/bit_count_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y138.AQ     Tcko                  0.234   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/bit_count_0
+    SLICE_X52Y138.C3     net (fanout=3)        0.182   __mips/__UART/__uart_rx/bit_count<0>
+    SLICE_X52Y138.C      Tilo                  0.156   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/_n0110_inv21
+    SLICE_X52Y138.CE     net (fanout=1)        0.011   __mips/__UART/__uart_rx/_n0110_inv
+    SLICE_X52Y138.CLK    Tckce       (-Th)     0.092   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/bit_count_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.491ns (0.298ns logic, 0.193ns route)
+                                                       (60.7% logic, 39.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point __mips/__UART/__uart_rx/bit_count_1 (SLICE_X52Y138.CE), 277 paths
+--------------------------------------------------------------------------------
+Slack (hold path):      0.378ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               __mips/__UART/__uart_rx/bit_count_1 (FF)
+  Destination:          __mips/__UART/__uart_rx/bit_count_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.378ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_in_BUFGP rising at 40.000ns
+  Destination Clock:    clk_in_BUFGP rising at 40.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: __mips/__UART/__uart_rx/bit_count_1 to __mips/__UART/__uart_rx/bit_count_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y138.BMUX   Tshcko                0.266   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/bit_count_1
+    SLICE_X52Y138.C6     net (fanout=3)        0.034   __mips/__UART/__uart_rx/bit_count<1>
+    SLICE_X52Y138.C      Tilo                  0.156   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/_n0110_inv21
+    SLICE_X52Y138.CE     net (fanout=1)        0.011   __mips/__UART/__uart_rx/_n0110_inv
+    SLICE_X52Y138.CLK    Tckce       (-Th)     0.089   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/bit_count_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.378ns (0.333ns logic, 0.045ns route)
+                                                       (88.1% logic, 11.9% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      0.461ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               __mips/__UART/__uart_rx/state_FSM_FFd2 (FF)
+  Destination:          __mips/__UART/__uart_rx/bit_count_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.461ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_in_BUFGP rising at 40.000ns
+  Destination Clock:    clk_in_BUFGP rising at 40.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: __mips/__UART/__uart_rx/state_FSM_FFd2 to __mips/__UART/__uart_rx/bit_count_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X53Y139.BQ     Tcko                  0.198   __mips/__UART/__uart_rx/state_FSM_FFd2
+                                                       __mips/__UART/__uart_rx/state_FSM_FFd2
+    SLICE_X52Y138.C5     net (fanout=20)       0.185   __mips/__UART/__uart_rx/state_FSM_FFd2
+    SLICE_X52Y138.C      Tilo                  0.156   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/_n0110_inv21
+    SLICE_X52Y138.CE     net (fanout=1)        0.011   __mips/__UART/__uart_rx/_n0110_inv
+    SLICE_X52Y138.CLK    Tckce       (-Th)     0.089   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/bit_count_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.461ns (0.265ns logic, 0.196ns route)
+                                                       (57.5% logic, 42.5% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      0.494ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               __mips/__UART/__uart_rx/bit_count_0 (FF)
+  Destination:          __mips/__UART/__uart_rx/bit_count_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.494ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_in_BUFGP rising at 40.000ns
+  Destination Clock:    clk_in_BUFGP rising at 40.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: __mips/__UART/__uart_rx/bit_count_0 to __mips/__UART/__uart_rx/bit_count_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y138.AQ     Tcko                  0.234   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/bit_count_0
+    SLICE_X52Y138.C3     net (fanout=3)        0.182   __mips/__UART/__uart_rx/bit_count<0>
+    SLICE_X52Y138.C      Tilo                  0.156   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/_n0110_inv21
+    SLICE_X52Y138.CE     net (fanout=1)        0.011   __mips/__UART/__uart_rx/_n0110_inv
+    SLICE_X52Y138.CLK    Tckce       (-Th)     0.089   __mips/__UART/__uart_rx/bit_count<2>
+                                                       __mips/__UART/__uart_rx/bit_count_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.494ns (0.301ns logic, 0.193ns route)
+                                                       (60.9% logic, 39.1% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk_in = PERIOD TIMEGRP "clk_in" 40 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 36.430ns (period - min period limit)
+  Period: 40.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
+  Physical resource: __mips/__IM/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram/CLKA
+  Logical resource: __mips/__IM/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram/CLKA
+  Location pin: RAMB16_X3Y64.CLKA
+  Clock network: clk_in_BUFGP
+--------------------------------------------------------------------------------
+Slack: 36.430ns (period - min period limit)
+  Period: 40.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
+  Physical resource: __mips/__IM/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram/CLKA
+  Logical resource: __mips/__IM/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram/CLKA
+  Location pin: RAMB16_X3Y66.CLKA
+  Clock network: clk_in_BUFGP
+--------------------------------------------------------------------------------
+Slack: 36.430ns (period - min period limit)
+  Period: 40.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
+  Physical resource: __mips/__IM/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram/CLKA
+  Logical resource: __mips/__IM/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram/CLKA
+  Location pin: RAMB16_X4Y66.CLKA
+  Clock network: clk_in_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk_in
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_in         |   34.946|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 1635310795323 paths, 0 nets, and 22726 connections
+
+Design statistics:
+   Minimum period:  34.946ns{1}   (Maximum frequency:  28.616MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Wed Dec  7 16:12:40 2022 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 598 MB
+
+
+

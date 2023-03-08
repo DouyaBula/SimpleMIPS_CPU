@@ -1,0 +1,2180 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Reading design: fpga_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "fpga_top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "fpga_top"
+Output Format                      : NGC
+Target Device                      : xc6slx100-2-fgg676
+
+---- Source Options
+Top Module Name                    : fpga_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/MulDivUnit.v" into library work
+Parsing module <MulUnit>.
+Parsing module <DivUnit>.
+Parsing module <MulDivUnit>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/CU_TypeDecoder.v" into library work
+Parsing module <TypeDecoder>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/CU_SignalDecoder.v" into library work
+Parsing module <SignalDecoder>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/splitter.v" into library work
+Parsing module <splitter>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/pipeRegs.v" into library work
+Parsing verilog file "/home/co-eda/ISEProjects/P8_02/src/macros.v" included at line 3.
+Parsing module <pipeRegD>.
+Parsing module <pipeRegE>.
+Parsing module <pipeRegM>.
+Parsing module <pipeRegW>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/MemDataFix.v" into library work
+Parsing module <MemDataFix>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/MDU.v" into library work
+WARNING:HDLCompiler:572 - "/home/co-eda/ISEProjects/P8_02/src/MDU.v" Line 6: Macro <DIV> is redefined.
+Parsing module <MDU>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/IFU.v" into library work
+Parsing module <IFU>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/HazardUnit.v" into library work
+Parsing module <HazardUnit>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/GRF.v" into library work
+Parsing module <GRF>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/CP0.v" into library work
+Parsing verilog file "/home/co-eda/ISEProjects/P8_02/src/macros.v" included at line 3.
+Parsing module <CP0>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/ControlUnit.v" into library work
+Parsing module <ControlUnit>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/ByteEn.v" into library work
+Parsing module <ByteEn>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/ALU.v" into library work
+Parsing module <ALU>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/UART.v" into library work
+Parsing verilog file "/home/co-eda/ISEProjects/P8_02/src/macros.v" included at line 3.
+Parsing module <UART>.
+Parsing module <uart_count>.
+Parsing module <uart_tx>.
+Parsing module <uart_rx>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/P7_standard_timer_2019.v" into library work
+Parsing module <TC>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/DigitalTube.v" into library work
+Parsing module <DigitalTube>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/CPU.v" into library work
+Parsing verilog file "/home/co-eda/ISEProjects/P8_02/src/macros.v" included at line 3.
+Parsing module <CPU>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/Bridge.v" into library work
+Parsing verilog file "/home/co-eda/ISEProjects/P8_02/src/macros.v" included at line 3.
+Parsing module <Bridge>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/P8_02/ipcore_dir/IM.v" into library work
+Parsing module <IM>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/P8_02/ipcore_dir/DM.v" into library work
+Parsing module <DM>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/mips.v" into library work
+Parsing module <mips>.
+Analyzing Verilog file "/home/co-eda/ISEProjects/P8_02/src/fpga_top.v" into library work
+Parsing module <fpga_top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <fpga_top>.
+
+Elaborating module <mips>.
+WARNING:HDLCompiler:1127 - "/home/co-eda/ISEProjects/P8_02/src/mips.v" Line 45: Assignment to R_Instr ignored, since the identifier is never used
+
+Elaborating module <DM>.
+WARNING:HDLCompiler:1499 - "/home/co-eda/ISEProjects/P8_02/P8_02/ipcore_dir/DM.v" Line 39: Empty module <DM> remains a black box.
+WARNING:HDLCompiler:189 - "/home/co-eda/ISEProjects/P8_02/src/mips.v" Line 78: Size mismatch in connection of port <addra>. Formal port size is 12-bit while actual signal size is 32-bit.
+
+Elaborating module <IM>.
+WARNING:HDLCompiler:1499 - "/home/co-eda/ISEProjects/P8_02/P8_02/ipcore_dir/IM.v" Line 39: Empty module <IM> remains a black box.
+WARNING:HDLCompiler:189 - "/home/co-eda/ISEProjects/P8_02/src/mips.v" Line 85: Size mismatch in connection of port <addra>. Formal port size is 12-bit while actual signal size is 32-bit.
+
+Elaborating module <CPU>.
+
+Elaborating module <HazardUnit>.
+
+Elaborating module <IFU>.
+
+Elaborating module <pipeRegD>.
+
+Elaborating module <splitter>.
+
+Elaborating module <ControlUnit>.
+
+Elaborating module <TypeDecoder>.
+
+Elaborating module <SignalDecoder>.
+
+Elaborating module <GRF>.
+
+Elaborating module <pipeRegE>.
+
+Elaborating module <ALU>.
+WARNING:HDLCompiler:1127 - "/home/co-eda/ISEProjects/P8_02/src/ALU.v" Line 33: Assignment to SUBOv ignored, since the identifier is never used
+
+Elaborating module <MDU>.
+
+Elaborating module <MulDivUnit>.
+
+Elaborating module <MulUnit>.
+
+Elaborating module <DivUnit>.
+
+Elaborating module <pipeRegM>.
+WARNING:HDLCompiler:1127 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" Line 533: Assignment to PCSrcM ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" Line 534: Assignment to SignImmM ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" Line 539: Assignment to RegDstM ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" Line 540: Assignment to TuseM ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" Line 542: Assignment to ALUControlM ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" Line 543: Assignment to ALUSrcM ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" Line 544: Assignment to StartM ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" Line 545: Assignment to MDUOPM ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" Line 546: Assignment to ReadHILOM ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" Line 547: Assignment to TimeM ignored, since the identifier is never used
+
+Elaborating module <ByteEn>.
+
+Elaborating module <CP0>.
+
+Elaborating module <pipeRegW>.
+
+Elaborating module <MemDataFix>.
+
+Elaborating module <Bridge>.
+
+Elaborating module <TC>.
+WARNING:HDLCompiler:1127 - "/home/co-eda/ISEProjects/P8_02/src/P7_standard_timer_2019.v" Line 25: Assignment to Test_ctrl ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/co-eda/ISEProjects/P8_02/src/P7_standard_timer_2019.v" Line 27: Assignment to Test_preset ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/co-eda/ISEProjects/P8_02/src/P7_standard_timer_2019.v" Line 29: Assignment to Test_count ignored, since the identifier is never used
+
+Elaborating module <DigitalTube>.
+
+Elaborating module <UART>.
+
+Elaborating module <uart_tx>.
+
+Elaborating module <uart_count>.
+
+Elaborating module <uart_rx>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <fpga_top>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/fpga_top.v".
+    Summary:
+	no macro.
+Unit <fpga_top> synthesized.
+
+Synthesizing Unit <mips>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/mips.v".
+    Found 32-bit register for signal <W_Reg_DipSwitch0_3>.
+    Found 32-bit register for signal <W_Reg_DipSwitch4_7>.
+    Found 32-bit register for signal <W_Reg_User_Key>.
+    Found 32-bit register for signal <Reg_LED>.
+    Found 32-bit register for signal <R_Reg_DipSwitch0_3>.
+    Found 32-bit register for signal <R_Reg_DipSwitch4_7>.
+    Found 32-bit register for signal <R_Reg_User_Key>.
+    Found 32-bit register for signal <R_Reg_LED>.
+    Found 32-bit register for signal <R_Addr>.
+    Found 32-bit subtractor for signal <n0093> created at line 85.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred 288 D-type flip-flop(s).
+	inferred  32 Multiplexer(s).
+Unit <mips> synthesized.
+
+Synthesizing Unit <CPU>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/CPU.v".
+INFO:Xst:3210 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" line 498: Output port <PCSrcM> of the instance <pipeRegM_TOP> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" line 498: Output port <RegDstM> of the instance <pipeRegM_TOP> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" line 498: Output port <TuseM> of the instance <pipeRegM_TOP> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" line 498: Output port <ALUControlM> of the instance <pipeRegM_TOP> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" line 498: Output port <MDUOPM> of the instance <pipeRegM_TOP> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" line 498: Output port <ReadHILOM> of the instance <pipeRegM_TOP> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" line 498: Output port <TimeM> of the instance <pipeRegM_TOP> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" line 498: Output port <SignImmM> of the instance <pipeRegM_TOP> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" line 498: Output port <ALUSrcM> of the instance <pipeRegM_TOP> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/co-eda/ISEProjects/P8_02/src/CPU.v" line 498: Output port <StartM> of the instance <pipeRegM_TOP> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <ReqM_Reg>.
+    Found 1-bit register for signal <Stall_Reg>.
+    Found 32-bit register for signal <__InstrD>.
+    Found 1-bit register for signal <reset_Reg>.
+    Found 32-bit 7-to-1 multiplexer for signal <RD1ForwardResultD> created at line 80.
+    Found 32-bit 7-to-1 multiplexer for signal <RD2ForwardResultD> created at line 82.
+    Found 32-bit 7-to-1 multiplexer for signal <RD1ForwardResultE> created at line 120.
+    Found 32-bit 7-to-1 multiplexer for signal <RD2ForwardResultE> created at line 122.
+    Found 32-bit 7-to-1 multiplexer for signal <RegDataW> created at line 206.
+    Found 32-bit comparator greater for signal <PCForTestF[31]_GND_5_o_LessThan_10_o> created at line 265
+    Found 32-bit comparator greater for signal <GND_5_o_PCForTestF[31]_LessThan_11_o> created at line 266
+    Found 32-bit comparator equal for signal <RD1ForwardResultD[31]_RD2ForwardResultD[31]_equal_39_o> created at line 368
+    Found 32-bit comparator lessequal for signal <n0124> created at line 588
+    Found 32-bit comparator lessequal for signal <n0126> created at line 588
+    Found 32-bit comparator lessequal for signal <n0129> created at line 589
+    Found 32-bit comparator lessequal for signal <n0132> created at line 590
+    Found 32-bit comparator lessequal for signal <n0134> created at line 590
+    Found 32-bit comparator lessequal for signal <n0138> created at line 592
+    Summary:
+	inferred  35 D-type flip-flop(s).
+	inferred   9 Comparator(s).
+	inferred  22 Multiplexer(s).
+Unit <CPU> synthesized.
+
+Synthesizing Unit <HazardUnit>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/HazardUnit.v".
+    Found 2-bit comparator greater for signal <TuseD[1]_TnewE[1]_LessThan_8_o> created at line 45
+    Found 2-bit comparator greater for signal <TuseD[1]_TnewM[1]_LessThan_13_o> created at line 48
+    Found 5-bit comparator equal for signal <Instr25_21D[4]_WriteRegE[4]_equal_20_o> created at line 55
+    Found 5-bit comparator equal for signal <Instr25_21D[4]_WriteRegM[4]_equal_24_o> created at line 59
+    Found 5-bit comparator equal for signal <Instr20_16D[4]_WriteRegE[4]_equal_34_o> created at line 68
+    Found 5-bit comparator equal for signal <Instr20_16D[4]_WriteRegM[4]_equal_38_o> created at line 72
+    Found 5-bit comparator equal for signal <Instr25_21E[4]_WriteRegM[4]_equal_48_o> created at line 82
+    Found 5-bit comparator equal for signal <Instr25_21E[4]_WriteRegW[4]_equal_55_o> created at line 88
+    Found 5-bit comparator equal for signal <Instr20_16E[4]_WriteRegM[4]_equal_60_o> created at line 93
+    Found 5-bit comparator equal for signal <Instr20_16E[4]_WriteRegW[4]_equal_67_o> created at line 99
+    Summary:
+	inferred  10 Comparator(s).
+	inferred   8 Multiplexer(s).
+Unit <HazardUnit> synthesized.
+
+Synthesizing Unit <IFU>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/IFU.v".
+WARNING:Xst:647 - Input <Imm32<31:30>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit register for signal <PC>.
+    Found 32-bit adder for signal <PCPlus4Reg> created at line 26.
+    Found 32-bit adder for signal <PCPlus8Reg> created at line 27.
+    Found 32-bit adder for signal <PCBranchReg> created at line 28.
+    Found 32-bit adder for signal <EPC[31]_GND_7_o_add_13_OUT> created at line 37.
+    Found 32-bit 7-to-1 multiplexer for signal <muxResult> created at line 20.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  32 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+Unit <IFU> synthesized.
+
+Synthesizing Unit <pipeRegD>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/pipeRegs.v".
+    Found 32-bit register for signal <PCForTestD>.
+    Found 5-bit register for signal <__FixEXCF>.
+    Found 1-bit register for signal <DelaySlotD>.
+    Found 32-bit register for signal <PCPlus8D>.
+    Summary:
+	inferred  70 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <pipeRegD> synthesized.
+
+Synthesizing Unit <splitter>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/splitter.v".
+    Summary:
+	no macro.
+Unit <splitter> synthesized.
+
+Synthesizing Unit <ControlUnit>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/ControlUnit.v".
+    Summary:
+	no macro.
+Unit <ControlUnit> synthesized.
+
+Synthesizing Unit <TypeDecoder>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/CU_TypeDecoder.v".
+    Summary:
+	no macro.
+Unit <TypeDecoder> synthesized.
+
+Synthesizing Unit <SignalDecoder>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/CU_SignalDecoder.v".
+    Summary:
+	inferred  33 Multiplexer(s).
+Unit <SignalDecoder> synthesized.
+
+Synthesizing Unit <GRF>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/GRF.v".
+WARNING:Xst:647 - Input <PCForTest> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1024-bit register for signal <n0055[1023:0]>.
+    Found 32-bit 32-to-1 multiplexer for signal <A1[4]_registers[31][31]_wide_mux_2_OUT> created at line 13.
+    Found 32-bit 32-to-1 multiplexer for signal <A2[4]_registers[31][31]_wide_mux_7_OUT> created at line 15.
+    Found 5-bit comparator equal for signal <A1[4]_A3[4]_equal_2_o> created at line 13
+    Found 5-bit comparator equal for signal <A2[4]_A3[4]_equal_7_o> created at line 15
+    Summary:
+	inferred 1024 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred  38 Multiplexer(s).
+Unit <GRF> synthesized.
+
+Synthesizing Unit <pipeRegE>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/pipeRegs.v".
+    Found 1-bit register for signal <SignImmE>.
+    Found 3-bit register for signal <ByteEnControlE>.
+    Found 3-bit register for signal <MemDataControlE>.
+    Found 1-bit register for signal <RegWriteE>.
+    Found 3-bit register for signal <RegDataSrcE>.
+    Found 3-bit register for signal <RegDstE>.
+    Found 2-bit register for signal <TuseE>.
+    Found 2-bit register for signal <TnewE>.
+    Found 4-bit register for signal <ALUControlE>.
+    Found 1-bit register for signal <ALUSrcE>.
+    Found 1-bit register for signal <StartE>.
+    Found 4-bit register for signal <MDUOPE>.
+    Found 2-bit register for signal <ReadHILOE>.
+    Found 4-bit register for signal <TimeE>.
+    Found 32-bit register for signal <RD1E>.
+    Found 32-bit register for signal <PCPlus8E>.
+    Found 32-bit register for signal <RD2E>.
+    Found 32-bit register for signal <PCForTestE>.
+    Found 32-bit register for signal <Imm32E>.
+    Found 5-bit register for signal <Instr25_21E>.
+    Found 5-bit register for signal <Instr20_16E>.
+    Found 5-bit register for signal <Instr15_11E>.
+    Found 5-bit register for signal <__FixEXCD>.
+    Found 1-bit register for signal <DelaySlotE>.
+    Found 1-bit register for signal <CP0WriteE>.
+    Found 1-bit register for signal <ERETE>.
+    Found 3-bit register for signal <PCSrcE>.
+    Found 2-bit subtractor for signal <TnewD[1]_GND_14_o_sub_6_OUT> created at line 141.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred 220 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+Unit <pipeRegE> synthesized.
+
+Synthesizing Unit <ALU>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/ALU.v".
+    Found 33-bit adder for signal <SUMReg> created at line 15.
+    Found 32-bit subtractor for signal <SUBReg<31:0>> created at line 11.
+    Found 32-bit 8-to-1 multiplexer for signal <_n0055> created at line 8.
+    Found 32-bit comparator greater for signal <LTReg<0>> created at line 19
+    Found 32-bit comparator greater for signal <LTUReg<0>> created at line 20
+    Found 1-bit comparator not equal for signal <n0022> created at line 32
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   3 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <ALU> synthesized.
+
+Synthesizing Unit <MDU>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/MDU.v".
+    Found 32-bit register for signal <LO>.
+    Found 32-bit register for signal <HI>.
+    Summary:
+	inferred  64 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+Unit <MDU> synthesized.
+
+Synthesizing Unit <MulDivUnit>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/MulDivUnit.v".
+    Found 2-bit register for signal <op>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <MulDivUnit> synthesized.
+
+Synthesizing Unit <MulUnit>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/MulDivUnit.v".
+    Found 64-bit register for signal <tmp>.
+    Found 1-bit register for signal <done>.
+    Found 32x32-bit multiplier for signal <sr> created at line 23.
+    Found 32x32-bit multiplier for signal <usr> created at line 24.
+    Summary:
+	inferred   2 Multiplier(s).
+	inferred  65 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <MulUnit> synthesized.
+
+Synthesizing Unit <DivUnit>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/MulDivUnit.v".
+    Found 1-bit register for signal <tmps<3><66>>.
+    Found 1-bit register for signal <tmps<3><65>>.
+    Found 1-bit register for signal <tmps<3><64>>.
+    Found 1-bit register for signal <tmps<3><63>>.
+    Found 1-bit register for signal <tmps<3><62>>.
+    Found 1-bit register for signal <tmps<3><61>>.
+    Found 1-bit register for signal <tmps<3><60>>.
+    Found 1-bit register for signal <tmps<3><59>>.
+    Found 1-bit register for signal <tmps<3><58>>.
+    Found 1-bit register for signal <tmps<3><57>>.
+    Found 1-bit register for signal <tmps<3><56>>.
+    Found 1-bit register for signal <tmps<3><55>>.
+    Found 1-bit register for signal <tmps<3><54>>.
+    Found 1-bit register for signal <tmps<3><53>>.
+    Found 1-bit register for signal <tmps<3><52>>.
+    Found 1-bit register for signal <tmps<3><51>>.
+    Found 1-bit register for signal <tmps<3><50>>.
+    Found 1-bit register for signal <tmps<3><49>>.
+    Found 1-bit register for signal <tmps<3><48>>.
+    Found 1-bit register for signal <tmps<3><47>>.
+    Found 1-bit register for signal <tmps<3><46>>.
+    Found 1-bit register for signal <tmps<3><45>>.
+    Found 1-bit register for signal <tmps<3><44>>.
+    Found 1-bit register for signal <tmps<3><43>>.
+    Found 1-bit register for signal <tmps<3><42>>.
+    Found 1-bit register for signal <tmps<3><41>>.
+    Found 1-bit register for signal <tmps<3><40>>.
+    Found 1-bit register for signal <tmps<3><39>>.
+    Found 1-bit register for signal <tmps<3><38>>.
+    Found 1-bit register for signal <tmps<3><37>>.
+    Found 1-bit register for signal <tmps<3><36>>.
+    Found 1-bit register for signal <tmps<3><35>>.
+    Found 1-bit register for signal <tmps<3><34>>.
+    Found 1-bit register for signal <tmps<3><33>>.
+    Found 1-bit register for signal <tmps<3><32>>.
+    Found 1-bit register for signal <tmps<3><31>>.
+    Found 1-bit register for signal <tmps<3><30>>.
+    Found 1-bit register for signal <tmps<3><29>>.
+    Found 1-bit register for signal <tmps<3><28>>.
+    Found 1-bit register for signal <tmps<3><27>>.
+    Found 1-bit register for signal <tmps<3><26>>.
+    Found 1-bit register for signal <tmps<3><25>>.
+    Found 1-bit register for signal <tmps<3><24>>.
+    Found 1-bit register for signal <tmps<3><23>>.
+    Found 1-bit register for signal <tmps<3><22>>.
+    Found 1-bit register for signal <tmps<3><21>>.
+    Found 1-bit register for signal <tmps<3><20>>.
+    Found 1-bit register for signal <tmps<3><19>>.
+    Found 1-bit register for signal <tmps<3><18>>.
+    Found 1-bit register for signal <tmps<3><17>>.
+    Found 1-bit register for signal <tmps<3><16>>.
+    Found 1-bit register for signal <tmps<3><15>>.
+    Found 1-bit register for signal <tmps<3><14>>.
+    Found 1-bit register for signal <tmps<3><13>>.
+    Found 1-bit register for signal <tmps<3><12>>.
+    Found 1-bit register for signal <tmps<3><11>>.
+    Found 1-bit register for signal <tmps<3><10>>.
+    Found 1-bit register for signal <tmps<3><9>>.
+    Found 1-bit register for signal <tmps<3><8>>.
+    Found 1-bit register for signal <tmps<3><7>>.
+    Found 1-bit register for signal <tmps<3><6>>.
+    Found 1-bit register for signal <tmps<3><5>>.
+    Found 1-bit register for signal <tmps<3><4>>.
+    Found 1-bit register for signal <tmps<3><3>>.
+    Found 1-bit register for signal <tmps<3><2>>.
+    Found 1-bit register for signal <tmps<3><1>>.
+    Found 1-bit register for signal <tmps<3><0>>.
+    Found 1-bit register for signal <tmps<2><66>>.
+    Found 1-bit register for signal <tmps<2><65>>.
+    Found 1-bit register for signal <tmps<2><64>>.
+    Found 1-bit register for signal <tmps<2><63>>.
+    Found 1-bit register for signal <tmps<2><62>>.
+    Found 1-bit register for signal <tmps<2><61>>.
+    Found 1-bit register for signal <tmps<2><60>>.
+    Found 1-bit register for signal <tmps<2><59>>.
+    Found 1-bit register for signal <tmps<2><58>>.
+    Found 1-bit register for signal <tmps<2><57>>.
+    Found 1-bit register for signal <tmps<2><56>>.
+    Found 1-bit register for signal <tmps<2><55>>.
+    Found 1-bit register for signal <tmps<2><54>>.
+    Found 1-bit register for signal <tmps<2><53>>.
+    Found 1-bit register for signal <tmps<2><52>>.
+    Found 1-bit register for signal <tmps<2><51>>.
+    Found 1-bit register for signal <tmps<2><50>>.
+    Found 1-bit register for signal <tmps<2><49>>.
+    Found 1-bit register for signal <tmps<2><48>>.
+    Found 1-bit register for signal <tmps<2><47>>.
+    Found 1-bit register for signal <tmps<2><46>>.
+    Found 1-bit register for signal <tmps<2><45>>.
+    Found 1-bit register for signal <tmps<2><44>>.
+    Found 1-bit register for signal <tmps<2><43>>.
+    Found 1-bit register for signal <tmps<2><42>>.
+    Found 1-bit register for signal <tmps<2><41>>.
+    Found 1-bit register for signal <tmps<2><40>>.
+    Found 1-bit register for signal <tmps<2><39>>.
+    Found 1-bit register for signal <tmps<2><38>>.
+    Found 1-bit register for signal <tmps<2><37>>.
+    Found 1-bit register for signal <tmps<2><36>>.
+    Found 1-bit register for signal <tmps<2><35>>.
+    Found 1-bit register for signal <tmps<2><34>>.
+    Found 1-bit register for signal <tmps<2><33>>.
+    Found 1-bit register for signal <tmps<2><32>>.
+    Found 1-bit register for signal <tmps<2><31>>.
+    Found 1-bit register for signal <tmps<2><30>>.
+    Found 1-bit register for signal <tmps<2><29>>.
+    Found 1-bit register for signal <tmps<2><28>>.
+    Found 1-bit register for signal <tmps<2><27>>.
+    Found 1-bit register for signal <tmps<2><26>>.
+    Found 1-bit register for signal <tmps<2><25>>.
+    Found 1-bit register for signal <tmps<2><24>>.
+    Found 1-bit register for signal <tmps<2><23>>.
+    Found 1-bit register for signal <tmps<2><22>>.
+    Found 1-bit register for signal <tmps<2><21>>.
+    Found 1-bit register for signal <tmps<2><20>>.
+    Found 1-bit register for signal <tmps<2><19>>.
+    Found 1-bit register for signal <tmps<2><18>>.
+    Found 1-bit register for signal <tmps<2><17>>.
+    Found 1-bit register for signal <tmps<2><16>>.
+    Found 1-bit register for signal <tmps<2><15>>.
+    Found 1-bit register for signal <tmps<2><14>>.
+    Found 1-bit register for signal <tmps<2><13>>.
+    Found 1-bit register for signal <tmps<2><12>>.
+    Found 1-bit register for signal <tmps<2><11>>.
+    Found 1-bit register for signal <tmps<2><10>>.
+    Found 1-bit register for signal <tmps<2><9>>.
+    Found 1-bit register for signal <tmps<2><8>>.
+    Found 1-bit register for signal <tmps<2><7>>.
+    Found 1-bit register for signal <tmps<2><6>>.
+    Found 1-bit register for signal <tmps<2><5>>.
+    Found 1-bit register for signal <tmps<2><4>>.
+    Found 1-bit register for signal <tmps<2><3>>.
+    Found 1-bit register for signal <tmps<2><2>>.
+    Found 1-bit register for signal <tmps<2><1>>.
+    Found 1-bit register for signal <tmps<2><0>>.
+    Found 1-bit register for signal <tmps<1><66>>.
+    Found 1-bit register for signal <tmps<1><65>>.
+    Found 1-bit register for signal <tmps<1><64>>.
+    Found 1-bit register for signal <tmps<1><63>>.
+    Found 1-bit register for signal <tmps<1><62>>.
+    Found 1-bit register for signal <tmps<1><61>>.
+    Found 1-bit register for signal <tmps<1><60>>.
+    Found 1-bit register for signal <tmps<1><59>>.
+    Found 1-bit register for signal <tmps<1><58>>.
+    Found 1-bit register for signal <tmps<1><57>>.
+    Found 1-bit register for signal <tmps<1><56>>.
+    Found 1-bit register for signal <tmps<1><55>>.
+    Found 1-bit register for signal <tmps<1><54>>.
+    Found 1-bit register for signal <tmps<1><53>>.
+    Found 1-bit register for signal <tmps<1><52>>.
+    Found 1-bit register for signal <tmps<1><51>>.
+    Found 1-bit register for signal <tmps<1><50>>.
+    Found 1-bit register for signal <tmps<1><49>>.
+    Found 1-bit register for signal <tmps<1><48>>.
+    Found 1-bit register for signal <tmps<1><47>>.
+    Found 1-bit register for signal <tmps<1><46>>.
+    Found 1-bit register for signal <tmps<1><45>>.
+    Found 1-bit register for signal <tmps<1><44>>.
+    Found 1-bit register for signal <tmps<1><43>>.
+    Found 1-bit register for signal <tmps<1><42>>.
+    Found 1-bit register for signal <tmps<1><41>>.
+    Found 1-bit register for signal <tmps<1><40>>.
+    Found 1-bit register for signal <tmps<1><39>>.
+    Found 1-bit register for signal <tmps<1><38>>.
+    Found 1-bit register for signal <tmps<1><37>>.
+    Found 1-bit register for signal <tmps<1><36>>.
+    Found 1-bit register for signal <tmps<1><35>>.
+    Found 1-bit register for signal <tmps<1><34>>.
+    Found 1-bit register for signal <tmps<1><33>>.
+    Found 1-bit register for signal <tmps<1><32>>.
+    Found 1-bit register for signal <tmps<1><31>>.
+    Found 1-bit register for signal <tmps<1><30>>.
+    Found 1-bit register for signal <tmps<1><29>>.
+    Found 1-bit register for signal <tmps<1><28>>.
+    Found 1-bit register for signal <tmps<1><27>>.
+    Found 1-bit register for signal <tmps<1><26>>.
+    Found 1-bit register for signal <tmps<1><25>>.
+    Found 1-bit register for signal <tmps<1><24>>.
+    Found 1-bit register for signal <tmps<1><23>>.
+    Found 1-bit register for signal <tmps<1><22>>.
+    Found 1-bit register for signal <tmps<1><21>>.
+    Found 1-bit register for signal <tmps<1><20>>.
+    Found 1-bit register for signal <tmps<1><19>>.
+    Found 1-bit register for signal <tmps<1><18>>.
+    Found 1-bit register for signal <tmps<1><17>>.
+    Found 1-bit register for signal <tmps<1><16>>.
+    Found 1-bit register for signal <tmps<1><15>>.
+    Found 1-bit register for signal <tmps<1><14>>.
+    Found 1-bit register for signal <tmps<1><13>>.
+    Found 1-bit register for signal <tmps<1><12>>.
+    Found 1-bit register for signal <tmps<1><11>>.
+    Found 1-bit register for signal <tmps<1><10>>.
+    Found 1-bit register for signal <tmps<1><9>>.
+    Found 1-bit register for signal <tmps<1><8>>.
+    Found 1-bit register for signal <tmps<1><7>>.
+    Found 1-bit register for signal <tmps<1><6>>.
+    Found 1-bit register for signal <tmps<1><5>>.
+    Found 1-bit register for signal <tmps<1><4>>.
+    Found 1-bit register for signal <tmps<1><3>>.
+    Found 1-bit register for signal <tmps<1><2>>.
+    Found 1-bit register for signal <tmps<1><1>>.
+    Found 1-bit register for signal <tmps<1><0>>.
+    Found 1-bit register for signal <tmps<0><64>>.
+    Found 1-bit register for signal <tmps<0><63>>.
+    Found 1-bit register for signal <tmps<0><62>>.
+    Found 1-bit register for signal <tmps<0><61>>.
+    Found 1-bit register for signal <tmps<0><60>>.
+    Found 1-bit register for signal <tmps<0><59>>.
+    Found 1-bit register for signal <tmps<0><58>>.
+    Found 1-bit register for signal <tmps<0><57>>.
+    Found 1-bit register for signal <tmps<0><56>>.
+    Found 1-bit register for signal <tmps<0><55>>.
+    Found 1-bit register for signal <tmps<0><54>>.
+    Found 1-bit register for signal <tmps<0><53>>.
+    Found 1-bit register for signal <tmps<0><52>>.
+    Found 1-bit register for signal <tmps<0><51>>.
+    Found 1-bit register for signal <tmps<0><50>>.
+    Found 1-bit register for signal <tmps<0><49>>.
+    Found 1-bit register for signal <tmps<0><48>>.
+    Found 1-bit register for signal <tmps<0><47>>.
+    Found 1-bit register for signal <tmps<0><46>>.
+    Found 1-bit register for signal <tmps<0><45>>.
+    Found 1-bit register for signal <tmps<0><44>>.
+    Found 1-bit register for signal <tmps<0><43>>.
+    Found 1-bit register for signal <tmps<0><42>>.
+    Found 1-bit register for signal <tmps<0><41>>.
+    Found 1-bit register for signal <tmps<0><40>>.
+    Found 1-bit register for signal <tmps<0><39>>.
+    Found 1-bit register for signal <tmps<0><38>>.
+    Found 1-bit register for signal <tmps<0><37>>.
+    Found 1-bit register for signal <tmps<0><36>>.
+    Found 1-bit register for signal <tmps<0><35>>.
+    Found 1-bit register for signal <tmps<0><34>>.
+    Found 1-bit register for signal <tmps<0><33>>.
+    Found 1-bit register for signal <tmps<0><32>>.
+    Found 1-bit register for signal <tmps<0><31>>.
+    Found 1-bit register for signal <tmps<0><30>>.
+    Found 1-bit register for signal <tmps<0><29>>.
+    Found 1-bit register for signal <tmps<0><28>>.
+    Found 1-bit register for signal <tmps<0><27>>.
+    Found 1-bit register for signal <tmps<0><26>>.
+    Found 1-bit register for signal <tmps<0><25>>.
+    Found 1-bit register for signal <tmps<0><24>>.
+    Found 1-bit register for signal <tmps<0><23>>.
+    Found 1-bit register for signal <tmps<0><22>>.
+    Found 1-bit register for signal <tmps<0><21>>.
+    Found 1-bit register for signal <tmps<0><20>>.
+    Found 1-bit register for signal <tmps<0><19>>.
+    Found 1-bit register for signal <tmps<0><18>>.
+    Found 1-bit register for signal <tmps<0><17>>.
+    Found 1-bit register for signal <tmps<0><16>>.
+    Found 1-bit register for signal <tmps<0><15>>.
+    Found 1-bit register for signal <tmps<0><14>>.
+    Found 1-bit register for signal <tmps<0><13>>.
+    Found 1-bit register for signal <tmps<0><12>>.
+    Found 1-bit register for signal <tmps<0><11>>.
+    Found 1-bit register for signal <tmps<0><10>>.
+    Found 1-bit register for signal <tmps<0><9>>.
+    Found 1-bit register for signal <tmps<0><8>>.
+    Found 1-bit register for signal <tmps<0><7>>.
+    Found 1-bit register for signal <tmps<0><6>>.
+    Found 1-bit register for signal <tmps<0><5>>.
+    Found 1-bit register for signal <tmps<0><4>>.
+    Found 1-bit register for signal <tmps<0><3>>.
+    Found 1-bit register for signal <tmps<0><2>>.
+    Found 1-bit register for signal <tmps<0><1>>.
+    Found 1-bit register for signal <tmps<0><0>>.
+    Found 32-bit register for signal <timer>.
+    Found 2-bit register for signal <negResBits>.
+    Found 1-bit register for signal <busy>.
+    Found 32-bit subtractor for signal <in_src1[31]_unary_minus_1_OUT> created at line 69.
+    Found 32-bit subtractor for signal <in_src0[31]_unary_minus_3_OUT> created at line 69.
+    Found 67-bit subtractor for signal <subs<2>> created at line 71.
+    Found 67-bit subtractor for signal <subs<1>> created at line 71.
+    Found 67-bit subtractor for signal <subs<0>> created at line 71.
+    Found 32-bit subtractor for signal <tmp[1][31]_unary_minus_10_OUT> created at line 73.
+    Found 32-bit subtractor for signal <tmp[0][31]_unary_minus_12_OUT> created at line 73.
+    Found 66-bit adder for signal <n0654[65:0]> created at line 82.
+    Found 67-bit adder for signal <subs[2][66]_GND_21_o_add_19_OUT> created at line 102.
+    Found 67-bit adder for signal <subs[1][66]_GND_21_o_add_20_OUT> created at line 102.
+    Found 67-bit adder for signal <subs[0][66]_GND_21_o_add_21_OUT> created at line 102.
+    Found 32-bit comparator greater for signal <tmps[0][47]_tmps[1][63]_LessThan_17_o> created at line 88
+    Found 32-bit comparator greater for signal <tmps[0][55]_tmps[1][63]_LessThan_18_o> created at line 92
+    Found 32-bit comparator greater for signal <tmps[0][59]_tmps[1][63]_LessThan_19_o> created at line 96
+    Summary:
+	inferred   9 Adder/Subtractor(s).
+	inferred 301 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+	inferred 255 Multiplexer(s).
+Unit <DivUnit> synthesized.
+
+Synthesizing Unit <pipeRegM>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/pipeRegs.v".
+    Found 1-bit register for signal <SignImmM>.
+    Found 3-bit register for signal <ByteEnControlM>.
+    Found 3-bit register for signal <MemDataControlM>.
+    Found 1-bit register for signal <RegWriteM>.
+    Found 3-bit register for signal <RegDataSrcM>.
+    Found 3-bit register for signal <RegDstM>.
+    Found 2-bit register for signal <TuseM>.
+    Found 2-bit register for signal <TnewM>.
+    Found 4-bit register for signal <ALUControlM>.
+    Found 1-bit register for signal <ALUSrcM>.
+    Found 1-bit register for signal <StartM>.
+    Found 4-bit register for signal <MDUOPM>.
+    Found 2-bit register for signal <ReadHILOM>.
+    Found 4-bit register for signal <TimeM>.
+    Found 32-bit register for signal <ALUResultM>.
+    Found 32-bit register for signal <PCPlus8M>.
+    Found 32-bit register for signal <PCForTestM>.
+    Found 5-bit register for signal <WriteRegM>.
+    Found 32-bit register for signal <RD2ForwardResultM>.
+    Found 32-bit register for signal <MDUResultM>.
+    Found 5-bit register for signal <__FixEXCE>.
+    Found 1-bit register for signal <DelaySlotM>.
+    Found 1-bit register for signal <CP0WriteM>.
+    Found 5-bit register for signal <Instr15_11M>.
+    Found 1-bit register for signal <ERETM>.
+    Found 3-bit register for signal <PCSrcM>.
+    Found 2-bit subtractor for signal <TnewE[1]_GND_23_o_sub_5_OUT> created at line 268.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred 215 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <pipeRegM> synthesized.
+
+Synthesizing Unit <ByteEn>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/ByteEn.v".
+WARNING:Xst:647 - Input <ALUResult<31:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit 4-to-1 multiplexer for signal <ALUResult[1]_RD2ForwardResult[7]_wide_mux_3_OUT> created at line 19.
+    Found 32-bit 4-to-1 multiplexer for signal <_n0036> created at line 12.
+    Found 4-bit 4-to-1 multiplexer for signal <_n0043> created at line 11.
+    Summary:
+	inferred   6 Multiplexer(s).
+Unit <ByteEn> synthesized.
+
+Synthesizing Unit <CP0>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/CP0.v".
+    Found 1-bit register for signal <SR<30>>.
+    Found 1-bit register for signal <SR<29>>.
+    Found 1-bit register for signal <SR<28>>.
+    Found 1-bit register for signal <SR<27>>.
+    Found 1-bit register for signal <SR<26>>.
+    Found 1-bit register for signal <SR<25>>.
+    Found 1-bit register for signal <SR<24>>.
+    Found 1-bit register for signal <SR<23>>.
+    Found 1-bit register for signal <SR<22>>.
+    Found 1-bit register for signal <SR<21>>.
+    Found 1-bit register for signal <SR<20>>.
+    Found 1-bit register for signal <SR<19>>.
+    Found 1-bit register for signal <SR<18>>.
+    Found 1-bit register for signal <SR<17>>.
+    Found 1-bit register for signal <SR<16>>.
+    Found 1-bit register for signal <SR<15>>.
+    Found 1-bit register for signal <SR<14>>.
+    Found 1-bit register for signal <SR<13>>.
+    Found 1-bit register for signal <SR<12>>.
+    Found 1-bit register for signal <SR<11>>.
+    Found 1-bit register for signal <SR<10>>.
+    Found 1-bit register for signal <SR<9>>.
+    Found 1-bit register for signal <SR<8>>.
+    Found 1-bit register for signal <SR<7>>.
+    Found 1-bit register for signal <SR<6>>.
+    Found 1-bit register for signal <SR<5>>.
+    Found 1-bit register for signal <SR<4>>.
+    Found 1-bit register for signal <SR<3>>.
+    Found 1-bit register for signal <SR<2>>.
+    Found 1-bit register for signal <SR<1>>.
+    Found 1-bit register for signal <SR<0>>.
+    Found 1-bit register for signal <Cause<31>>.
+    Found 1-bit register for signal <Cause<30>>.
+    Found 1-bit register for signal <Cause<29>>.
+    Found 1-bit register for signal <Cause<28>>.
+    Found 1-bit register for signal <Cause<27>>.
+    Found 1-bit register for signal <Cause<26>>.
+    Found 1-bit register for signal <Cause<25>>.
+    Found 1-bit register for signal <Cause<24>>.
+    Found 1-bit register for signal <Cause<23>>.
+    Found 1-bit register for signal <Cause<22>>.
+    Found 1-bit register for signal <Cause<21>>.
+    Found 1-bit register for signal <Cause<20>>.
+    Found 1-bit register for signal <Cause<19>>.
+    Found 1-bit register for signal <Cause<18>>.
+    Found 1-bit register for signal <Cause<17>>.
+    Found 1-bit register for signal <Cause<16>>.
+    Found 1-bit register for signal <Cause<15>>.
+    Found 1-bit register for signal <Cause<14>>.
+    Found 1-bit register for signal <Cause<13>>.
+    Found 1-bit register for signal <Cause<12>>.
+    Found 1-bit register for signal <Cause<11>>.
+    Found 1-bit register for signal <Cause<10>>.
+    Found 1-bit register for signal <Cause<9>>.
+    Found 1-bit register for signal <Cause<8>>.
+    Found 1-bit register for signal <Cause<7>>.
+    Found 1-bit register for signal <Cause<6>>.
+    Found 1-bit register for signal <Cause<5>>.
+    Found 1-bit register for signal <Cause<4>>.
+    Found 1-bit register for signal <Cause<3>>.
+    Found 1-bit register for signal <Cause<2>>.
+    Found 1-bit register for signal <Cause<1>>.
+    Found 1-bit register for signal <Cause<0>>.
+    Found 32-bit register for signal <EPC>.
+    Found 1-bit register for signal <SR<31>>.
+    Found 32-bit subtractor for signal <VPC[31]_GND_25_o_sub_16_OUT> created at line 63.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  96 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <CP0> synthesized.
+
+Synthesizing Unit <pipeRegW>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/pipeRegs.v".
+    Found 1-bit register for signal <RegWriteW>.
+    Found 2-bit register for signal <TnewW>.
+    Found 32-bit register for signal <ALUResultW>.
+    Found 32-bit register for signal <PCPlus8W>.
+    Found 5-bit register for signal <WriteRegW>.
+    Found 32-bit register for signal <PCForTestW>.
+    Found 32-bit register for signal <MDUResultW>.
+    Found 32-bit register for signal <CP0OutW>.
+    Found 3-bit register for signal <MemDataControlW>.
+    Found 3-bit register for signal <RegDataSrcW>.
+    Found 2-bit subtractor for signal <TnewM[1]_GND_26_o_sub_5_OUT> created at line 339.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred 174 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <pipeRegW> synthesized.
+
+Synthesizing Unit <MemDataFix>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/MemDataFix.v".
+WARNING:Xst:647 - Input <ALUResult<31:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit 4-to-1 multiplexer for signal <ALUResult[1]_RawMemoryData[31]_wide_mux_1_OUT> created at line 16.
+    Found 32-bit 4-to-1 multiplexer for signal <_n0028> created at line 10.
+    Summary:
+	inferred   4 Multiplexer(s).
+Unit <MemDataFix> synthesized.
+
+Synthesizing Unit <Bridge>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/Bridge.v".
+WARNING:Xst:647 - Input <m_inst_addr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit comparator lessequal for signal <n0003> created at line 34
+    Found 32-bit comparator lessequal for signal <n0008> created at line 35
+    Found 32-bit comparator lessequal for signal <n0010> created at line 35
+    Found 32-bit comparator lessequal for signal <n0014> created at line 36
+    Found 32-bit comparator lessequal for signal <n0016> created at line 36
+    Found 32-bit comparator lessequal for signal <n0020> created at line 37
+    Found 32-bit comparator lessequal for signal <n0022> created at line 37
+    Found 32-bit comparator lessequal for signal <n0026> created at line 38
+    Found 32-bit comparator lessequal for signal <n0028> created at line 38
+    Found 32-bit comparator lessequal for signal <n0032> created at line 40
+    Found 32-bit comparator lessequal for signal <n0034> created at line 41
+    Found 32-bit comparator lessequal for signal <n0036> created at line 41
+    Found 32-bit comparator lessequal for signal <n0039> created at line 42
+    Found 32-bit comparator lessequal for signal <n0041> created at line 42
+    Found 32-bit comparator lessequal for signal <n0044> created at line 43
+    Found 32-bit comparator lessequal for signal <n0046> created at line 43
+    Found 32-bit comparator lessequal for signal <n0049> created at line 44
+    Found 32-bit comparator lessequal for signal <n0051> created at line 44
+    Found 32-bit comparator lessequal for signal <n0054> created at line 45
+    Found 32-bit comparator lessequal for signal <n0056> created at line 45
+    Found 32-bit comparator lessequal for signal <n0059> created at line 46
+    Found 32-bit comparator lessequal for signal <n0061> created at line 46
+    Summary:
+	inferred  22 Comparator(s).
+	inferred   7 Multiplexer(s).
+Unit <Bridge> synthesized.
+
+Synthesizing Unit <TC>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/P7_standard_timer_2019.v".
+WARNING:Xst:647 - Input <Addr<31:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <mem<2><31>>.
+    Found 1-bit register for signal <mem<2><30>>.
+    Found 1-bit register for signal <mem<2><29>>.
+    Found 1-bit register for signal <mem<2><28>>.
+    Found 1-bit register for signal <mem<2><27>>.
+    Found 1-bit register for signal <mem<2><26>>.
+    Found 1-bit register for signal <mem<2><25>>.
+    Found 1-bit register for signal <mem<2><24>>.
+    Found 1-bit register for signal <mem<2><23>>.
+    Found 1-bit register for signal <mem<2><22>>.
+    Found 1-bit register for signal <mem<2><21>>.
+    Found 1-bit register for signal <mem<2><20>>.
+    Found 1-bit register for signal <mem<2><19>>.
+    Found 1-bit register for signal <mem<2><18>>.
+    Found 1-bit register for signal <mem<2><17>>.
+    Found 1-bit register for signal <mem<2><16>>.
+    Found 1-bit register for signal <mem<2><15>>.
+    Found 1-bit register for signal <mem<2><14>>.
+    Found 1-bit register for signal <mem<2><13>>.
+    Found 1-bit register for signal <mem<2><12>>.
+    Found 1-bit register for signal <mem<2><11>>.
+    Found 1-bit register for signal <mem<2><10>>.
+    Found 1-bit register for signal <mem<2><9>>.
+    Found 1-bit register for signal <mem<2><8>>.
+    Found 1-bit register for signal <mem<2><7>>.
+    Found 1-bit register for signal <mem<2><6>>.
+    Found 1-bit register for signal <mem<2><5>>.
+    Found 1-bit register for signal <mem<2><4>>.
+    Found 1-bit register for signal <mem<2><3>>.
+    Found 1-bit register for signal <mem<2><2>>.
+    Found 1-bit register for signal <mem<2><1>>.
+    Found 1-bit register for signal <mem<2><0>>.
+    Found 1-bit register for signal <mem<1><31>>.
+    Found 1-bit register for signal <mem<1><30>>.
+    Found 1-bit register for signal <mem<1><29>>.
+    Found 1-bit register for signal <mem<1><28>>.
+    Found 1-bit register for signal <mem<1><27>>.
+    Found 1-bit register for signal <mem<1><26>>.
+    Found 1-bit register for signal <mem<1><25>>.
+    Found 1-bit register for signal <mem<1><24>>.
+    Found 1-bit register for signal <mem<1><23>>.
+    Found 1-bit register for signal <mem<1><22>>.
+    Found 1-bit register for signal <mem<1><21>>.
+    Found 1-bit register for signal <mem<1><20>>.
+    Found 1-bit register for signal <mem<1><19>>.
+    Found 1-bit register for signal <mem<1><18>>.
+    Found 1-bit register for signal <mem<1><17>>.
+    Found 1-bit register for signal <mem<1><16>>.
+    Found 1-bit register for signal <mem<1><15>>.
+    Found 1-bit register for signal <mem<1><14>>.
+    Found 1-bit register for signal <mem<1><13>>.
+    Found 1-bit register for signal <mem<1><12>>.
+    Found 1-bit register for signal <mem<1><11>>.
+    Found 1-bit register for signal <mem<1><10>>.
+    Found 1-bit register for signal <mem<1><9>>.
+    Found 1-bit register for signal <mem<1><8>>.
+    Found 1-bit register for signal <mem<1><7>>.
+    Found 1-bit register for signal <mem<1><6>>.
+    Found 1-bit register for signal <mem<1><5>>.
+    Found 1-bit register for signal <mem<1><4>>.
+    Found 1-bit register for signal <mem<1><3>>.
+    Found 1-bit register for signal <mem<1><2>>.
+    Found 1-bit register for signal <mem<1><1>>.
+    Found 1-bit register for signal <mem<1><0>>.
+    Found 1-bit register for signal <mem<0><31>>.
+    Found 1-bit register for signal <mem<0><30>>.
+    Found 1-bit register for signal <mem<0><29>>.
+    Found 1-bit register for signal <mem<0><28>>.
+    Found 1-bit register for signal <mem<0><27>>.
+    Found 1-bit register for signal <mem<0><26>>.
+    Found 1-bit register for signal <mem<0><25>>.
+    Found 1-bit register for signal <mem<0><24>>.
+    Found 1-bit register for signal <mem<0><23>>.
+    Found 1-bit register for signal <mem<0><22>>.
+    Found 1-bit register for signal <mem<0><21>>.
+    Found 1-bit register for signal <mem<0><20>>.
+    Found 1-bit register for signal <mem<0><19>>.
+    Found 1-bit register for signal <mem<0><18>>.
+    Found 1-bit register for signal <mem<0><17>>.
+    Found 1-bit register for signal <mem<0><16>>.
+    Found 1-bit register for signal <mem<0><15>>.
+    Found 1-bit register for signal <mem<0><14>>.
+    Found 1-bit register for signal <mem<0><13>>.
+    Found 1-bit register for signal <mem<0><12>>.
+    Found 1-bit register for signal <mem<0><11>>.
+    Found 1-bit register for signal <mem<0><10>>.
+    Found 1-bit register for signal <mem<0><9>>.
+    Found 1-bit register for signal <mem<0><8>>.
+    Found 1-bit register for signal <mem<0><7>>.
+    Found 1-bit register for signal <mem<0><6>>.
+    Found 1-bit register for signal <mem<0><5>>.
+    Found 1-bit register for signal <mem<0><4>>.
+    Found 1-bit register for signal <mem<0><3>>.
+    Found 1-bit register for signal <mem<0><2>>.
+    Found 1-bit register for signal <mem<0><1>>.
+    Found 1-bit register for signal <mem<0><0>>.
+    Found 1-bit register for signal <_IRQ>.
+    Found 2-bit register for signal <state>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 11                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit subtractor for signal <mem[2][31]_GND_29_o_sub_13_OUT> created at line 62.
+    Found 32-bit 3-to-1 multiplexer for signal <Dout> created at line 35.
+    Found 32-bit comparator greater for signal <GND_29_o_mem[2][31]_LessThan_12_o> created at line 62
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  97 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred 126 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <TC> synthesized.
+
+Synthesizing Unit <DigitalTube>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/DigitalTube.v".
+WARNING:Xst:647 - Input <addr<31:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit register for signal <counter>.
+    Found 2-bit register for signal <select>.
+    Found 64-bit register for signal <n0103[63:0]>.
+    Found 32-bit adder for signal <counter[31]_GND_30_o_add_21_OUT> created at line 59.
+    Found 2-bit adder for signal <select[1]_GND_30_o_add_28_OUT> created at line 71.
+    Found 3-bit adder for signal <GND_30_o_PWR_35_o_add_37_OUT> created at line 106.
+    Found 4-bit shifter logical left for signal <sel0> created at line 24
+    Found 60-bit shifter logical right for signal <n0123> created at line 105
+    Found 60-bit shifter logical right for signal <n0126> created at line 106
+    Found 16x8-bit Read Only RAM for signal <Regs[1][3]_PWR_35_o_wide_mux_41_OUT>
+    Summary:
+	inferred   1 RAM(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred  98 D-type flip-flop(s).
+	inferred 132 Multiplexer(s).
+	inferred   3 Combinational logic shifter(s).
+Unit <DigitalTube> synthesized.
+
+Synthesizing Unit <UART>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/UART.v".
+WARNING:Xst:647 - Input <addr<31:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8-bit register for signal <rx_data>.
+    Found 1-bit register for signal <Regs<0><7>>.
+    Found 1-bit register for signal <Regs<0><6>>.
+    Found 1-bit register for signal <Regs<0><5>>.
+    Found 1-bit register for signal <Regs<0><4>>.
+    Found 1-bit register for signal <Regs<0><3>>.
+    Found 1-bit register for signal <Regs<0><2>>.
+    Found 1-bit register for signal <Regs<0><1>>.
+    Found 1-bit register for signal <Regs<0><0>>.
+    Found 1-bit register for signal <Regs<1><7>>.
+    Found 1-bit register for signal <Regs<1><6>>.
+    Found 1-bit register for signal <Regs<1><5>>.
+    Found 1-bit register for signal <Regs<1><4>>.
+    Found 1-bit register for signal <Regs<1><3>>.
+    Found 1-bit register for signal <Regs<1><2>>.
+    Found 1-bit register for signal <Regs<1><1>>.
+    Found 1-bit register for signal <Regs<1><0>>.
+    Found 1-bit register for signal <Regs<2><15>>.
+    Found 1-bit register for signal <Regs<2><14>>.
+    Found 1-bit register for signal <Regs<2><13>>.
+    Found 1-bit register for signal <Regs<2><12>>.
+    Found 1-bit register for signal <Regs<2><11>>.
+    Found 1-bit register for signal <Regs<2><10>>.
+    Found 1-bit register for signal <Regs<2><9>>.
+    Found 1-bit register for signal <Regs<2><8>>.
+    Found 1-bit register for signal <Regs<2><7>>.
+    Found 1-bit register for signal <Regs<2><6>>.
+    Found 1-bit register for signal <Regs<2><5>>.
+    Found 1-bit register for signal <Regs<2><4>>.
+    Found 1-bit register for signal <Regs<2><3>>.
+    Found 1-bit register for signal <Regs<2><2>>.
+    Found 1-bit register for signal <Regs<2><1>>.
+    Found 1-bit register for signal <Regs<2><0>>.
+    Found 1-bit register for signal <Regs<3><15>>.
+    Found 1-bit register for signal <Regs<3><14>>.
+    Found 1-bit register for signal <Regs<3><13>>.
+    Found 1-bit register for signal <Regs<3><12>>.
+    Found 1-bit register for signal <Regs<3><11>>.
+    Found 1-bit register for signal <Regs<3><10>>.
+    Found 1-bit register for signal <Regs<3><9>>.
+    Found 1-bit register for signal <Regs<3><8>>.
+    Found 1-bit register for signal <Regs<3><7>>.
+    Found 1-bit register for signal <Regs<3><6>>.
+    Found 1-bit register for signal <Regs<3><5>>.
+    Found 1-bit register for signal <Regs<3><4>>.
+    Found 1-bit register for signal <Regs<3><3>>.
+    Found 1-bit register for signal <Regs<3><2>>.
+    Found 1-bit register for signal <Regs<3><1>>.
+    Found 1-bit register for signal <Regs<3><0>>.
+    Found 1-bit register for signal <tx_start>.
+    Found 8-bit 4-to-1 multiplexer for signal <addr[3]_Regs[3][7]_wide_mux_2_OUT> created at line 35.
+    Summary:
+	inferred  57 D-type flip-flop(s).
+	inferred  11 Multiplexer(s).
+Unit <UART> synthesized.
+
+Synthesizing Unit <uart_tx>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/UART.v".
+    Found 8-bit register for signal <data>.
+    Found 3-bit register for signal <bit_count>.
+    Found 2-bit register for signal <state>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 5                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit subtractor for signal <bit_count[2]_GND_32_o_sub_8_OUT> created at line 167.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  11 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <uart_tx> synthesized.
+
+Synthesizing Unit <uart_count>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/UART.v".
+    Found 16-bit register for signal <count>.
+    Found 16-bit adder for signal <count[15]_GND_33_o_add_8_OUT> created at line 112.
+    Found 16-bit comparator equal for signal <q> created at line 112
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <uart_count> synthesized.
+
+Synthesizing Unit <uart_rx>.
+    Related source file is "/home/co-eda/ISEProjects/P8_02/src/UART.v".
+    Found 8-bit register for signal <buffer>.
+    Found 3-bit register for signal <bit_count>.
+    Found 8-bit register for signal <rx_data>.
+    Found 1-bit register for signal <rx_ready>.
+    Found 2-bit register for signal <state>.
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit subtractor for signal <bit_count[2]_GND_34_o_sub_9_OUT> created at line 236.
+    Found 16-bit adder for signal <period[15]_GND_34_o_add_1_OUT> created at line 205.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  20 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <uart_rx> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 16x8-bit single-port Read Only RAM                    : 1
+# Multipliers                                          : 2
+ 32x32-bit multiplier                                  : 2
+# Adders/Subtractors                                   : 29
+ 16-bit adder                                          : 3
+ 2-bit adder                                           : 1
+ 2-bit subtractor                                      : 3
+ 3-bit adder                                           : 1
+ 3-bit subtractor                                      : 2
+ 32-bit adder                                          : 5
+ 32-bit subtractor                                     : 8
+ 33-bit adder                                          : 1
+ 66-bit adder                                          : 1
+ 67-bit adder                                          : 1
+ 67-bit subtractor                                     : 3
+# Registers                                            : 378
+ 1-bit register                                        : 290
+ 1024-bit register                                     : 1
+ 16-bit register                                       : 2
+ 2-bit register                                        : 10
+ 3-bit register                                        : 14
+ 32-bit register                                       : 37
+ 4-bit register                                        : 6
+ 5-bit register                                        : 9
+ 6-bit register                                        : 1
+ 64-bit register                                       : 2
+ 66-bit register                                       : 1
+ 8-bit register                                        : 5
+# Comparators                                          : 52
+ 1-bit comparator not equal                            : 1
+ 16-bit comparator equal                               : 2
+ 2-bit comparator greater                              : 2
+ 32-bit comparator equal                               : 1
+ 32-bit comparator greater                             : 8
+ 32-bit comparator lessequal                           : 28
+ 5-bit comparator equal                                : 10
+# Multiplexers                                         : 708
+ 1-bit 2-to-1 multiplexer                              : 546
+ 16-bit 2-to-1 multiplexer                             : 4
+ 2-bit 2-to-1 multiplexer                              : 4
+ 3-bit 2-to-1 multiplexer                              : 26
+ 32-bit 2-to-1 multiplexer                             : 74
+ 32-bit 3-to-1 multiplexer                             : 1
+ 32-bit 32-to-1 multiplexer                            : 2
+ 32-bit 4-to-1 multiplexer                             : 4
+ 32-bit 7-to-1 multiplexer                             : 6
+ 32-bit 8-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 16
+ 4-bit 4-to-1 multiplexer                              : 1
+ 5-bit 2-to-1 multiplexer                              : 8
+ 64-bit 2-to-1 multiplexer                             : 2
+ 67-bit 2-to-1 multiplexer                             : 6
+ 8-bit 2-to-1 multiplexer                              : 6
+ 8-bit 4-to-1 multiplexer                              : 1
+# Logic shifters                                       : 3
+ 4-bit shifter logical left                            : 1
+ 60-bit shifter logical right                          : 2
+# FSMs                                                 : 3
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/DM.ngc>.
+Reading core <ipcore_dir/IM.ngc>.
+Loading core <DM> for timing and area information for instance <__DM>.
+Loading core <IM> for timing and area information for instance <__IM>.
+INFO:Xst:2261 - The FF/Latch <tmps<2>_38> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_37> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_64> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_63> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_59> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_58> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_33> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_32> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_54> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_53> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_49> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_48> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_44> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_43> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_42> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_41> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_37> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_36> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_63> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_62> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_58> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_57> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_53> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_52> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_48> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_47> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_43> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_42> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_41> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_40> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_62> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_61> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_36> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_35> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_57> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_56> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_52> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_51> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_47> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_46> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_40> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_39> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_61> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_60> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_35> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_34> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_56> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_55> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_51> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_50> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_46> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_45> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_39> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_38> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_60> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_59> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_34> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_33> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_55> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_54> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_50> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_49> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_45> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_44> 
+INFO:Xst:2261 - The FF/Latch <W_Reg_User_Key_8> in Unit <__mips> is equivalent to the following 23 FFs/Latches, which will be removed : <W_Reg_User_Key_9> <W_Reg_User_Key_10> <W_Reg_User_Key_11> <W_Reg_User_Key_12> <W_Reg_User_Key_13> <W_Reg_User_Key_14> <W_Reg_User_Key_15> <W_Reg_User_Key_16> <W_Reg_User_Key_17> <W_Reg_User_Key_18> <W_Reg_User_Key_19> <W_Reg_User_Key_20> <W_Reg_User_Key_21> <W_Reg_User_Key_22> <W_Reg_User_Key_23> <W_Reg_User_Key_24> <W_Reg_User_Key_25> <W_Reg_User_Key_26> <W_Reg_User_Key_27> <W_Reg_User_Key_28> <W_Reg_User_Key_29> <W_Reg_User_Key_30> <W_Reg_User_Key_31> 
+WARNING:Xst:1710 - FF/Latch <tmps<1>_22> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_26> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_27> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_25> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_29> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_30> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_28> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_31> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_64> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_65> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_66> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_1> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_2> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_0> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_4> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_5> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_3> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_7> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_8> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_6> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_9> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_10> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_11> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_12> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_14> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <W_Reg_User_Key_8> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_0> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_1> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_3> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_4> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_2> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_5> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_6> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_7> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_8> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_10> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_11> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_9> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_13> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_14> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_12> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_16> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_17> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_15> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_18> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_19> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_20> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_21> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_23> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_24> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_2> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_3> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_4> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_5> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_6> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_0> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_1> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_7> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_8> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_16> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_17> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_9> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_18> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_19> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_20> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_21> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_22> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_23> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_24> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_25> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_26> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_27> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_28> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_29> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_30> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_15> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_13> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_17> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_18> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_16> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_20> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_21> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_19> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_22> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_23> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_24> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_25> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_27> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_15> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_14> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_12> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Cause_11> (without init value) has a constant value of 0 in block <CP0_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<3>_66> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_32> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_66> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_65> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_29> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_31> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_30> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_26> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<2>_28> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_20> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_21> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_22> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_23> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_24> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_25> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_26> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_27> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_28> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_29> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_30> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_31> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_19> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_18> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_17> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_16> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_15> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_14> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_13> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_12> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_11> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_10> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_9> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_Reg_User_Key_8> (without init value) has a constant value of 0 in block <__mips>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <RegDstE_2> of sequential type is unconnected in block <pipeRegE_TOP>.
+WARNING:Xst:2404 -  FFs/Latches <W_Reg_User_Key<31:8>> (without init value) have a constant value of 0 in block <mips>.
+WARNING:Xst:2404 -  FFs/Latches <R_Reg_User_Key<31:8>> (without init value) have a constant value of 0 in block <mips>.
+
+Synthesizing (advanced) Unit <DigitalTube>.
+The following registers are absorbed into counter <select>: 1 register on signal <select>.
+INFO:Xst:3212 - HDL ADVISOR - Asynchronous or synchronous initialization of the register <Regs_1> prevents it from being combined with the RAM <Mram_Regs[1][3]_PWR_35_o_wide_mux_41_OUT> for implementation as read-only block RAM.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <n0103[63:0]<3:0>> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <DigitalTube> synthesized (advanced).
+
+Synthesizing (advanced) Unit <uart_rx>.
+The following registers are absorbed into counter <bit_count>: 1 register on signal <bit_count>.
+Unit <uart_rx> synthesized (advanced).
+
+Synthesizing (advanced) Unit <uart_tx>.
+The following registers are absorbed into counter <bit_count>: 1 register on signal <bit_count>.
+Unit <uart_tx> synthesized (advanced).
+WARNING:Xst:2677 - Node <pipeRegE_TOP/RegDstE_2> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <Regs_1_4> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_5> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_6> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_7> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_8> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_9> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_10> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_11> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_12> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_13> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_14> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_15> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_16> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_17> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_18> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_19> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_20> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_21> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_22> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_23> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_24> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_25> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_26> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_27> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_28> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_29> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_30> of sequential type is unconnected in block <DigitalTube>.
+WARNING:Xst:2677 - Node <Regs_1_31> of sequential type is unconnected in block <DigitalTube>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 16x8-bit single-port distributed Read Only RAM        : 1
+# Multipliers                                          : 2
+ 32x32-bit multiplier                                  : 2
+# Adders/Subtractors                                   : 26
+ 14-bit subtractor                                     : 1
+ 16-bit adder                                          : 3
+ 2-bit subtractor                                      : 3
+ 3-bit adder                                           : 1
+ 32-bit adder                                          : 5
+ 32-bit subtractor                                     : 7
+ 33-bit adder                                          : 1
+ 65-bit adder                                          : 1
+ 66-bit adder                                          : 1
+ 67-bit subtractor                                     : 3
+# Counters                                             : 3
+ 2-bit up counter                                      : 1
+ 3-bit down counter                                    : 2
+# Registers                                            : 2781
+ Flip-Flops                                            : 2781
+# Comparators                                          : 52
+ 1-bit comparator not equal                            : 1
+ 16-bit comparator equal                               : 2
+ 2-bit comparator greater                              : 2
+ 32-bit comparator equal                               : 1
+ 32-bit comparator greater                             : 8
+ 32-bit comparator lessequal                           : 28
+ 5-bit comparator equal                                : 10
+# Multiplexers                                         : 817
+ 1-bit 2-to-1 multiplexer                              : 593
+ 1-bit 3-to-1 multiplexer                              : 32
+ 1-bit 4-to-1 multiplexer                              : 8
+ 1-bit 7-to-1 multiplexer                              : 32
+ 16-bit 2-to-1 multiplexer                             : 4
+ 2-bit 2-to-1 multiplexer                              : 4
+ 3-bit 2-to-1 multiplexer                              : 24
+ 32-bit 2-to-1 multiplexer                             : 71
+ 32-bit 32-to-1 multiplexer                            : 2
+ 32-bit 4-to-1 multiplexer                             : 4
+ 32-bit 7-to-1 multiplexer                             : 5
+ 32-bit 8-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 16
+ 4-bit 4-to-1 multiplexer                              : 1
+ 5-bit 2-to-1 multiplexer                              : 6
+ 64-bit 2-to-1 multiplexer                             : 2
+ 67-bit 2-to-1 multiplexer                             : 6
+ 8-bit 2-to-1 multiplexer                              : 6
+# Logic shifters                                       : 3
+ 4-bit shifter logical left                            : 1
+ 60-bit shifter logical right                          : 2
+# FSMs                                                 : 3
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <Cause_2> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_3> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_4> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_5> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_6> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_0> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_1> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_7> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_8> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_16> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_17> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_9> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_18> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_19> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_20> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_21> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_22> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_23> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_24> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_25> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_26> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_27> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_28> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_29> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Cause_30> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tmps<1>_18> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_19> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_20> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_21> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_23> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_24> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_22> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_26> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_27> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_25> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_29> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_30> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_28> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_31> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_64> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_65> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_66> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_0> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_1> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_3> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_4> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_2> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_5> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_6> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_7> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_8> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_10> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_11> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_9> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_13> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_14> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_12> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_16> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_17> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<1>_15> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_16> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_20> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_21> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_19> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_22> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_23> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_24> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_25> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_27> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_28> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_26> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_30> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_31> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_29> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_65> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_66> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_32> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<3>_66> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_1> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_2> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_0> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_4> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_5> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_3> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_7> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_8> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_6> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_9> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_10> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_11> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_12> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_14> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_15> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_13> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_17> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tmps<2>_18> (without init value) has a constant value of 0 in block <DivUnit>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <pipeRegE_TOP/Imm32E_16> in Unit <CPU> is equivalent to the following 15 FFs/Latches, which will be removed : <pipeRegE_TOP/Imm32E_17> <pipeRegE_TOP/Imm32E_18> <pipeRegE_TOP/Imm32E_19> <pipeRegE_TOP/Imm32E_20> <pipeRegE_TOP/Imm32E_21> <pipeRegE_TOP/Imm32E_22> <pipeRegE_TOP/Imm32E_23> <pipeRegE_TOP/Imm32E_24> <pipeRegE_TOP/Imm32E_25> <pipeRegE_TOP/Imm32E_26> <pipeRegE_TOP/Imm32E_27> <pipeRegE_TOP/Imm32E_28> <pipeRegE_TOP/Imm32E_29> <pipeRegE_TOP/Imm32E_30> <pipeRegE_TOP/Imm32E_31> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_38> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_37> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_64> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_63> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_59> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_58> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_33> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_32> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_54> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_53> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_49> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_48> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_44> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_43> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_42> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_41> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_37> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_36> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_63> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_62> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_58> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_57> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_53> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_52> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_48> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_47> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_43> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_42> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_41> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_40> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_62> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_61> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_36> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_35> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_57> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_56> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_52> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_51> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_47> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_46> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_40> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_39> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_61> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_60> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_35> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_34> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_56> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_55> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_51> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_50> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_46> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_45> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_39> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_38> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_60> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_59> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_34> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_33> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_55> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_54> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_50> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_49> 
+INFO:Xst:2261 - The FF/Latch <tmps<2>_45> in Unit <DivUnit> is equivalent to the following FF/Latch, which will be removed : <tmps_44> 
+INFO:Xst:2261 - The FF/Latch <pipeRegE_TOP/Instr15_11E_3> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <pipeRegE_TOP/Imm32E_14> 
+INFO:Xst:2261 - The FF/Latch <pipeRegE_TOP/Instr15_11E_2> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <pipeRegE_TOP/Imm32E_13> 
+INFO:Xst:2261 - The FF/Latch <pipeRegE_TOP/Instr15_11E_4> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <pipeRegE_TOP/Imm32E_15> 
+INFO:Xst:2261 - The FF/Latch <pipeRegE_TOP/Instr15_11E_1> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <pipeRegE_TOP/Imm32E_12> 
+INFO:Xst:2261 - The FF/Latch <pipeRegE_TOP/Instr15_11E_0> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <pipeRegE_TOP/Imm32E_11> 
+INFO:Xst:2261 - The FF/Latch <Cause_15> in Unit <CP0> is equivalent to the following 3 FFs/Latches, which will be removed : <Cause_14> <Cause_12> <Cause_11> 
+INFO:Xst:2261 - The FF/Latch <__FixEXCF_0> in Unit <pipeRegD> is equivalent to the following 3 FFs/Latches, which will be removed : <__FixEXCF_1> <__FixEXCF_3> <__FixEXCF_4> 
+WARNING:Xst:1710 - FF/Latch <Cause_15> (without init value) has a constant value of 0 in block <CP0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <__FixEXCF_2> (without init value) has a constant value of 1 in block <pipeRegD>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <__mips/Timer0_Mips/FSM_0> on signal <state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+ 11    | 11
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <__mips/__UART/__uart_tx/FSM_1> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+ 11    | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <__mips/__UART/__uart_rx/FSM_2> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+ 11    | 10
+-------------------
+WARNING:Xst:1293 - FF/Latch <DivUnit/tmps<3>_65> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_64> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_63> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_62> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_61> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_60> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_59> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_58> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_57> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_56> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_55> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_54> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_53> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_52> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_51> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_50> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_49> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_48> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_47> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_46> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_45> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_44> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_43> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_42> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_41> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_40> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_39> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_38> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_37> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_36> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_35> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <DivUnit/tmps<3>_34> has a constant value of 0 in block <MulDivUnit>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <DivUnit/tmps<3>_33> in Unit <MulDivUnit> is equivalent to the following FF/Latch, which will be removed : <DivUnit/tmps<2>_33> 
+INFO:Xst:2261 - The FF/Latch <DivUnit/timer_31> in Unit <MulDivUnit> is equivalent to the following FF/Latch, which will be removed : <DivUnit/timer_30> 
+WARNING:Xst:1710 - FF/Latch <pipeRegE_TOP/MemDataControlE_2> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pipeRegE_TOP/ByteEnControlE_2> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pipeRegM_TOP/ByteEnControlM_2> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pipeRegM_TOP/MemDataControlM_2> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pipeRegW_TOP/MemDataControlW_2> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <fpga_top> ...
+
+Optimizing unit <mips> ...
+
+Optimizing unit <CPU> ...
+
+Optimizing unit <CP0> ...
+
+Optimizing unit <IFU> ...
+
+Optimizing unit <pipeRegD> ...
+
+Optimizing unit <GRF> ...
+
+Optimizing unit <MDU> ...
+
+Optimizing unit <MulDivUnit> ...
+INFO:Xst:2261 - The FF/Latch <DivUnit/timer_29> in Unit <MulDivUnit> is equivalent to the following FF/Latch, which will be removed : <DivUnit/timer_28> 
+INFO:Xst:2261 - The FF/Latch <DivUnit/timer_27> in Unit <MulDivUnit> is equivalent to the following FF/Latch, which will be removed : <DivUnit/timer_26> 
+INFO:Xst:2261 - The FF/Latch <DivUnit/timer_25> in Unit <MulDivUnit> is equivalent to the following FF/Latch, which will be removed : <DivUnit/timer_24> 
+INFO:Xst:2261 - The FF/Latch <DivUnit/timer_23> in Unit <MulDivUnit> is equivalent to the following FF/Latch, which will be removed : <DivUnit/timer_22> 
+
+Optimizing unit <HazardUnit> ...
+
+Optimizing unit <ALU> ...
+
+Optimizing unit <TC> ...
+
+Optimizing unit <DigitalTube> ...
+
+Optimizing unit <UART> ...
+
+Optimizing unit <uart_tx> ...
+
+Optimizing unit <uart_count> ...
+
+Optimizing unit <uart_rx> ...
+
+Optimizing unit <Bridge> ...
+WARNING:Xst:2677 - Node <__mips/R_Addr_1> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/R_Addr_0> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegM_TOP/__FixEXCE_4> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegM_TOP/__FixEXCE_3> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegM_TOP/__FixEXCE_2> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegM_TOP/__FixEXCE_1> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegM_TOP/__FixEXCE_0> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_31> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_30> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_29> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_28> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_27> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_26> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_25> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_24> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_23> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_22> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_21> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_20> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_19> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_18> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_17> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_16> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_15> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_14> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_13> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_12> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_11> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_10> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_9> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_8> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_7> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_6> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_5> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_4> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_3> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_2> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_1> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegW_TOP/PCForTestW_0> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegE_TOP/__FixEXCD_4> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegE_TOP/__FixEXCD_3> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegE_TOP/__FixEXCD_2> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegE_TOP/__FixEXCD_1> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegE_TOP/__FixEXCD_0> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:2677 - Node <__mips/CPU_Mips/pipeRegD_TOP/__FixEXCF_0> of sequential type is unconnected in block <fpga_top>.
+WARNING:Xst:1710 - FF/Latch <__mips/Timer0_Mips/mem<0>_30> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_31> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_27> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_29> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_28> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_24> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_26> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_25> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_23> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_22> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_19> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_21> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_20> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_18> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_17> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_14> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_16> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_15> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_13> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_12> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_9> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_11> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_10> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_8> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_7> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_4> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_6> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <__mips/Timer0_Mips/mem<0>_5> (without init value) has a constant value of 0 in block <fpga_top>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_0> in Unit <fpga_top> is equivalent to the following FF/Latch, which will be removed : <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_1> 
+INFO:Xst:2261 - The FF/Latch <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_2> in Unit <fpga_top> is equivalent to the following FF/Latch, which will be removed : <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_3> 
+INFO:Xst:2261 - The FF/Latch <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_4> in Unit <fpga_top> is equivalent to the following FF/Latch, which will be removed : <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_5> 
+INFO:Xst:2261 - The FF/Latch <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_6> in Unit <fpga_top> is equivalent to the following FF/Latch, which will be removed : <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_7> 
+INFO:Xst:2261 - The FF/Latch <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_8> in Unit <fpga_top> is equivalent to the following FF/Latch, which will be removed : <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_9> 
+INFO:Xst:2261 - The FF/Latch <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_10> in Unit <fpga_top> is equivalent to the following FF/Latch, which will be removed : <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_11> 
+INFO:Xst:2261 - The FF/Latch <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_12> in Unit <fpga_top> is equivalent to the following FF/Latch, which will be removed : <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_13> 
+INFO:Xst:2261 - The FF/Latch <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_14> in Unit <fpga_top> is equivalent to the following FF/Latch, which will be removed : <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_15> 
+INFO:Xst:2261 - The FF/Latch <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_20> in Unit <fpga_top> is equivalent to the following FF/Latch, which will be removed : <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_21> 
+INFO:Xst:2261 - The FF/Latch <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_16> in Unit <fpga_top> is equivalent to the following FF/Latch, which will be removed : <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_17> 
+INFO:Xst:2261 - The FF/Latch <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_18> in Unit <fpga_top> is equivalent to the following FF/Latch, which will be removed : <__mips/CPU_Mips/MDU_TOP/__MulDivUnit/DivUnit/timer_19> 
+INFO:Xst:2261 - The FF/Latch <__mips/CPU_Mips/pipeRegD_TOP/PCForTestD_0> in Unit <fpga_top> is equivalent to the following FF/Latch, which will be removed : <__mips/CPU_Mips/pipeRegD_TOP/PCPlus8D_0> 
+INFO:Xst:2261 - The FF/Latch <__mips/CPU_Mips/pipeRegD_TOP/PCForTestD_1> in Unit <fpga_top> is equivalent to the following FF/Latch, which will be removed : <__mips/CPU_Mips/pipeRegD_TOP/PCPlus8D_1> 
+INFO:Xst:2261 - The FF/Latch <__mips/CPU_Mips/pipeRegD_TOP/PCForTestD_2> in Unit <fpga_top> is equivalent to the following FF/Latch, which will be removed : <__mips/CPU_Mips/pipeRegD_TOP/PCPlus8D_2> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block fpga_top, actual ratio is 9.
+FlipFlop __mips/CPU_Mips/pipeRegW_TOP/WriteRegW_0 has been replicated 1 time(s)
+FlipFlop __mips/CPU_Mips/pipeRegW_TOP/WriteRegW_1 has been replicated 1 time(s)
+FlipFlop __mips/CPU_Mips/pipeRegW_TOP/WriteRegW_2 has been replicated 1 time(s)
+FlipFlop __mips/R_Addr_15 has been replicated 1 time(s)
+FlipFlop __mips/R_Addr_16 has been replicated 1 time(s)
+FlipFlop __mips/R_Addr_8 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 2515
+ Flip-Flops                                            : 2515
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : fpga_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 6635
+#      GND                         : 3
+#      INV                         : 276
+#      LUT1                        : 104
+#      LUT2                        : 164
+#      LUT3                        : 1313
+#      LUT4                        : 610
+#      LUT5                        : 829
+#      LUT6                        : 1761
+#      MUXCY                       : 819
+#      MUXF7                       : 72
+#      VCC                         : 3
+#      XORCY                       : 681
+# FlipFlops/Latches                : 2517
+#      FD                          : 151
+#      FDE                         : 2
+#      FDR                         : 705
+#      FDRE                        : 1645
+#      FDSE                        : 14
+# RAMS                             : 16
+#      RAMB16BWER                  : 15
+#      RAMB8BWER                   : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 140
+#      IBUF                        : 74
+#      OBUF                        : 66
+# DSPs                             : 8
+#      DSP48A1                     : 8
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx100fgg676-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            2517  out of  126576     1%  
+ Number of Slice LUTs:                 5057  out of  63288     7%  
+    Number used as Logic:              5057  out of  63288     7%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   5657
+   Number with an unused Flip Flop:    3140  out of   5657    55%  
+   Number with an unused LUT:           600  out of   5657    10%  
+   Number of fully used LUT-FF pairs:  1917  out of   5657    33%  
+   Number of unique control sets:        40
+
+IO Utilization: 
+ Number of IOs:                         141
+ Number of bonded IOBs:                 141  out of    480    29%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:               16  out of    268     5%  
+    Number using Block RAM only:         16
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+ Number of DSP48A1s:                      8  out of    180     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                                                                                                                | Load  |
+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+-------+
+clk_in                             | BUFGP                                                                                                                                | 2533  |
+__mips/__DM/N1                     | NONE(__mips/__DM/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram)| 8     |
+__mips/__IM/N1                     | NONE(__mips/__IM/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram)| 8     |
+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 28.462ns (Maximum Frequency: 35.135MHz)
+   Minimum input arrival time before clock: 7.085ns
+   Maximum output required time after clock: 7.548ns
+   Maximum combinational path delay: 6.939ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_in'
+  Clock period: 28.462ns (frequency: 35.135MHz)
+  Total number of paths / destination ports: 1379823361959 / 5071
+-------------------------------------------------------------------------
+Delay:               28.462ns (Levels of Logic = 16)
+  Source:            __mips/R_Addr_12 (FF)
+  Destination:       __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_34 (FF)
+  Source Clock:      clk_in rising
+  Destination Clock: clk_in rising
+
+  Data Path: __mips/R_Addr_12 to __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_34
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              19   0.525   1.691  __mips/R_Addr_12 (__mips/R_Addr_12)
+     LUT5:I0->O            1   0.254   0.000  __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_lut<0> (__mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<0> (__mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<1> (__mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<2> (__mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3> (__mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<3>)
+     MUXCY:CI->O          33   0.235   1.645  __mips/Bridge_Mips/Mcompar_GND_28_o_R_Addr[31]_LessThan_20_o_cy<4> (__mips/Bridge_Mips/GND_28_o_R_Addr[31]_LessThan_20_o)
+     LUT2:I0->O           15   0.250   1.155  __mips/Bridge_Mips/GND_28_o_R_Addr[31]_AND_2261_o1_4 (__mips/Bridge_Mips/GND_28_o_R_Addr[31]_AND_2261_o13)
+     LUT6:I5->O            1   0.254   0.790  __mips/Bridge_Mips/Mmux_m_data_rdata42_SW1 (N247)
+     LUT6:I4->O            3   0.250   0.874  __mips/Bridge_Mips/Mmux_m_data_rdata43 (__mips/Bridge_O_m_data_rdata<10>)
+     LUT5:I3->O            5   0.250   0.949  __mips/CPU_Mips/mux1113 (__mips/CPU_Mips/mux1112)
+     LUT6:I4->O           12   0.250   1.068  __mips/CPU_Mips/Mmux_RD1ForwardResultE212 (__mips/CPU_Mips/RD1ForwardResultE<10>)
+     DSP48A1:A10->P47     18   5.220   1.234  __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr (__mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr_P47_to_MulUnit/Mmult_sr1)
+     DSP48A1:C30->PCOUT47    1   3.149   0.000  __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1 (__mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr1_PCOUT_to_MulUnit/Mmult_sr2_PCIN_47)
+     DSP48A1:PCIN47->P47   18   2.645   1.234  __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2 (__mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr2_P47_to_MulUnit/Mmult_sr3)
+     DSP48A1:C30->P29      1   3.141   0.790  __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmult_sr3 (__mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/sr<63>)
+     LUT5:I3->O            1   0.250   0.000  __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/Mmux_usr[63]_sr[63]_mux_4_OUT601 (__mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/usr[63]_sr[63]_mux_4_OUT<63>)
+     FDRE:D                    0.074          __mips/CPU_Mips/MDU_TOP/__MulDivUnit/MulUnit/tmp_63
+    ----------------------------------------
+    Total                     28.462ns (17.032ns logic, 11.430ns route)
+                                       (59.8% logic, 40.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_in'
+  Total number of paths / destination ports: 2580 / 2579
+-------------------------------------------------------------------------
+Offset:              7.085ns (Levels of Logic = 2)
+  Source:            sys_rstn (PAD)
+  Destination:       __mips/Reg_LED_31 (FF)
+  Destination Clock: clk_in rising
+
+  Data Path: sys_rstn to __mips/Reg_LED_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           115   1.328   2.254  sys_rstn_IBUF (sys_rstn_IBUF)
+     INV:I->O           1682   0.255   2.789  sys_rstn_INV_266_o1_INV_0 (sys_rstn_INV_266_o)
+     FDR:R                     0.459          __mips/W_Reg_DipSwitch0_3_0
+    ----------------------------------------
+    Total                      7.085ns (2.042ns logic, 5.043ns route)
+                                       (28.8% logic, 71.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_in'
+  Total number of paths / destination ports: 415 / 62
+-------------------------------------------------------------------------
+Offset:              7.548ns (Levels of Logic = 3)
+  Source:            __mips/__DigitalTube/select_0 (FF)
+  Destination:       digital_tube1<6> (PAD)
+  Source Clock:      clk_in rising
+
+  Data Path: __mips/__DigitalTube/select_0 to digital_tube1<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            14   0.525   1.582  __mips/__DigitalTube/select_0 (__mips/__DigitalTube/select_0)
+     LUT6:I0->O            7   0.254   1.340  __mips/__DigitalTube/Sh951 (__mips/__DigitalTube/Sh95)
+     LUT5:I0->O            1   0.254   0.681  __mips/__DigitalTube/Mmux_seg021 (digital_tube0_1_OBUF)
+     OBUF:I->O                 2.912          digital_tube0_1_OBUF (digital_tube0<1>)
+    ----------------------------------------
+    Total                      7.548ns (3.945ns logic, 3.603ns route)
+                                       (52.3% logic, 47.7% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 21 / 21
+-------------------------------------------------------------------------
+Delay:               6.939ns (Levels of Logic = 3)
+  Source:            user_key<1> (PAD)
+  Destination:       digital_tube2<4> (PAD)
+
+  Data Path: user_key<1> to digital_tube2<4>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            22   1.328   1.764  user_key_1_IBUF (user_key_1_IBUF)
+     LUT5:I0->O            1   0.254   0.681  __mips/__DigitalTube/Mmux_seg151 (digital_tube1_4_OBUF)
+     OBUF:I->O                 2.912          digital_tube1_4_OBUF (digital_tube1<4>)
+    ----------------------------------------
+    Total                      6.939ns (4.494ns logic, 2.445ns route)
+                                       (64.8% logic, 35.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk_in
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_in         |   28.462|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 24.00 secs
+Total CPU time to Xst completion: 20.77 secs
+ 
+--> 
+
+
+Total memory usage is 445440 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  393 (   0 filtered)
+Number of infos    :  106 (   0 filtered)
+

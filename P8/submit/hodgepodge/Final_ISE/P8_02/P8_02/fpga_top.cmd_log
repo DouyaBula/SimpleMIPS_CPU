@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "/home/co-eda/ISEProjects/P8_02/P8_02/fpga_top.xst" -ofn "/home/co-eda/ISEProjects/P8_02/P8_02/fpga_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc /home/co-eda/ISEProjects/P8_02/src/CO_FPGA_Constraint.ucf -p xc6slx100-fgg676-2 fpga_top.ngc fpga_top.ngd  
+map -intstyle ise -p xc6slx100-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o fpga_top_map.ncd fpga_top.ngd fpga_top.pcf 
+par -w -intstyle ise -ol high -mt off fpga_top_map.ncd fpga_top.ncd fpga_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml fpga_top.twx fpga_top.ncd -o fpga_top.twr fpga_top.pcf 
+bitgen -intstyle ise -f fpga_top.ut fpga_top.ncd 
